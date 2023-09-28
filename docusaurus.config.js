@@ -6,8 +6,8 @@ const mdxMermaid = require('mdx-mermaid');
 module.exports = {
   title: 'Web Programming for Apps and Services',
   tagline: 'Web Programming',
-  url: 'https://patrick-crawford.github.io/',
-  baseUrl: '/WebProgrammingForAppsAndServices',
+  url: 'https://patrick-crawford.github.io/WebProgrammingForAppsAndServices',
+  baseUrl: '/',
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
