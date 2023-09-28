@@ -12,6 +12,7 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+  organizationName: 'SDDS',
   projectName: 'WebProgrammingForAppsAndServices',
 
   markdown: {
