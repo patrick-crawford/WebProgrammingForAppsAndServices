@@ -12,7 +12,6 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'Seneca-ICTOER',
   projectName: 'WebProgrammingForAppsAndServices',
 
   markdown: {
@@ -65,7 +64,8 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
-          editUrl: 'https://github.com/Seneca-ICTOER/WebProgrammingForAppsAndServices/tree/main',
+          editUrl:
+            'hhttps://github.com/patrick-crawford/WebProgrammingForAppsAndServices/tree/master',
           remarkPlugins: [mdxMermaid],
         },
         theme: {
