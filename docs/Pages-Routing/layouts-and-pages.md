@@ -9,9 +9,31 @@ description: 'Layouts & Pages'
 
 Until now, we have only worked with a single "page" in our Next.js app: "Home", defined by the "Home" component, located within the index.js file in the "pages" folder.
 
-Each "route" in our application / site is defined by the name of the file within the "pages" folder. In this case, since we only have one file in the pages folder: **index.js** (not including "\_app.js" which is used to initialize pages - discussed later on), we only have one route "/". If we add another file, ie: "about.js" in the "pages" folder:
+Each "route" in our application / site is defined by the name of the file within the "pages" folder. In this case, we only have one route "/" because there is only one file in the "pages" folder: **index.js** (not including "\_app.js" which is used to initialize pages - discussed later on).
 
-```jsx
+We will be adding another route at "/about". When complete, our application will have two routes:
+
+- Route: "/" - Renders component from "pages/index.js"
+- Route "/about" - Renders component from "pages/about.js"
+
+Here's how to add the /about route:
+
+1. In the project's `pages` folder, add a file called: **`about.js`**
+
+```text title="Pages folder structure"
+📦pages
+ ┣ 📂api
+ ┣ 📂dashboard
+ ┣ 📂fonts
+ ┃ 📜_app.js
+ ┣ 📜_document.js
+ ┣ 📜about.js      <-- added this file
+ ┗ 📜index.js
+```
+
+2. In the `about.js` file, add this code:
+
+```jsx title="/pages/about.js"
 export default function About() {
   return (
     <>
@@ -21,16 +43,32 @@ export default function About() {
 }
 ```
 
-we will be adding another route at "/about" giving us:
+:::caution
 
-- Route: "/" - Renders component from "pages/index.js"
-- Route "/about" - Renders component from "pages/about.js"
+The name of the exported component does _not_ need to match the file name, since it is the file name that defines the route. However, the name of the component **must be capitalized** as usual.
 
-> **NOTE:** The name of the exported component does _not_ need to match the file name, since it is the file name that defines the route. However, the name of the component **must be capitalized** as usual.
+:::
+
+3. View the results by navigating to the /about route in a browser.
 
 ## Nested Routes
 
-It is sometimes necessary to define routes that are "nested" ie: "/dashboard/preferences". To achieve this, we simply need to recreate the nested route as a nested folder structure within the pages folder. Additionally, if we place an **index.js** file nested within another folder, Next.js will automatically serve that component as the default route for that folder. For example, if we wish to expand our current list of routes to add two "dashboard" routes, we can create the components:
+It is sometimes necessary to define routes that are "nested" ie: "/dashboard/preferences". To achieve this, we simply need to recreate the nested route as a nested folder structure within the `pages` folder. Additionally, if we place an **index.js** file nested within another folder, Next.js will automatically serve that component as the default route for that folder.
+
+Let's expand our current list of routes to add two "dashboard" routes
+
+1. In the `pages` folder, add a folder called `dashboard`
+
+```
+📦pages
+ ┣ 📂api
+ ┣ 📂dashboard        <-- create this folder
+ ┣ 📂fonts
+ ┣ 📜index.js
+ ┗ ... etc
+```
+
+2. Within the `pages/dashboard` folder, add two new components:
 
 **File:** "pages/dashboard/index.js"
 
@@ -56,23 +94,54 @@ export default function DashboardPreferences() {
 }
 ```
 
-Which will give us the updated list of routes:
+3. When complete, the `pages` folder will have this structure:
 
-- Route: "/" - Renders component from "pages/index.js"
-- Route "/about" - Renders component from "pages/about.js"
-- Route: "/dashboard" - Renders component from "pages/dashboard/index.js"
-- Route "/dashboard/preferences" - Renders component from "pages/dashboard/preferences.js"
+```
+📦pages
+ ┣ 📂api
+ ┣ 📂dashboard
+ ┃ ┣ 📜index.js         <-- added this file
+ ┃ ┗ 📜preferences.js   <-- added this file
+ ┣ 📂fonts
+ ┣ 📜index.js
+ ┗ ... etc
+```
+
+This will give us the following updated list of routes:
+
+- Route: `/` - Renders component from `pages/index.js`
+- Route `/about` - Renders component from `pages/about.js`
+- Route: `/dashboard` - Renders component from `pages/dashboard/index.js`
+- Route `/dashboard/preferences` - Renders component from `pages/dashboard/preferences.js`
 
 ## Layouts
 
-If we have components that are re-used across multiple pages (ie: a common "navbar" / "footer"), we can place these in a custom "Layout" component, which can then be specified for the whole application. Let's begin by creating a very simple layout without any extra components:
+If we have components that are re-used across multiple pages (ie: a common "navbar" / "footer"), we can place these in a custom "Layout" component, which can then be specified for the whole application. Let's begin by creating a very simple layout without any extra components.
 
-> **NOTE:** Since layouts are not "pages", they _must not_ be placed within the "pages" folder - instead, place them in a "components" folder, as we have previously done.
+1. In the project's `components` folder, add a new file called `layout.js`:
 
-**File:** "components/layout.js"
+```
+📦my-app
+ ┣ 📂components
+ ┃ ┗ 📜layout.js        <-- add this file
+ ┣ 📂pages
+ ┣ 📂public
+ ┣ 📂styles
+ ┣ 📜README.md
+ ┣ 📜package-lock.json
+ ┗ ... etc
+```
+
+:::caution
+
+Since layouts are not "pages", they **must not** be placed within the "pages" folder - instead, place them in a "components" folder, as we have previously done.
+
+:::
+
+2. In the `components/layout.js` file, add this code:
 
 <!-- prettier-ignore-start -->
-```jsx
+```jsx title="components/layout.js"
 export default function Layout(props) {
   return (
     <>
@@ -90,11 +159,9 @@ export default function Layout(props) {
 
 You will notice that this looks exactly like any other custom component that we have created before, except instead of rendering specific data passed to props (or within the "state" of the component), it renders ["props.children"](https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children). This is essentially a placeholder that renders the children of the component at a specific point in the layout. When using "props.children", we will be including the component using the form "&lt;Layout&gt;&lt;/Layout&gt;" instead of the "self-closing" notation (ie: &lt;Layout /&gt;) that we have used so far.
 
-To include this layout in all our pages, we must open the aforementioned "\_app.js" file located within the "pages" folder and "wrap" the "&lt;Component {...pageProps} /&gt;" with our new layout:
+3. To include this layout in all our pages, open the aforementioned "\_app.js" file located within the "pages" folder and "wrap" the "&lt;Component {...pageProps} /&gt;" with our new layout:
 
-**File:** "pages/\_app.js"
-
-```jsx
+```jsx title="pages/_app.js"
 import Layout from '@/components/layout';
 import '@/styles/globals.css';
 
@@ -109,7 +176,7 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
-If we browse the site now, we should see a common navigation bar with links to all our newly created routes.
+4. Navigate to the website. You will see a common navigation bar with links to all our newly created routes.
 
 > **NOTE**: It is also possible to configure layouts on a page-by-page basis. See the [official documentation](https://nextjs.org/docs/basic-features/layouts#per-page-layouts) for more information.
 
@@ -122,7 +189,7 @@ When browsing the site, you may have noticed that each route takes a moment to l
 Client-side routing can be achieved by wrapping any anchor tags (&lt;a:&gt;...&lt;/a&gt;) with a custom ["Link" Component](https://nextjs.org/docs/api-reference/next/link) (&lt;Link&gt;...&lt;/Link&gt;) containing the "href" attribute. Let's test this by refactoring our Layout to use "Link":
 
 <!-- prettier-ignore-start -->
-```jsx
+```jsx title="components/layout.js"
 import Link from 'next/link';
 
 export default function Layout(props) {
