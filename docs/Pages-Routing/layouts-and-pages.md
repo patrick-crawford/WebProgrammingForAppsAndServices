@@ -21,14 +21,14 @@ Here's how to add the /about route:
 1. In the project's `pages` folder, add a file called: **`about.js`**
 
 ```text title="Pages folder structure"
-📦pages
+📂 pages
  ┣ 📂api
  ┣ 📂dashboard
  ┣ 📂fonts
- ┃ 📜_app.js
- ┣ 📜_document.js
- ┣ 📜about.js      <-- added this file
- ┗ 📜index.js
+ ┃ _app.js
+ ┣ _document.js
+ ┣ about.js      <-- added this file
+ ┗ index.js
 ```
 
 2. In the `about.js` file, add this code:
@@ -59,12 +59,12 @@ Let's expand our current list of routes to add two "dashboard" routes
 
 1. In the `pages` folder, add a folder called `dashboard`
 
-```
-📦pages
- ┣ 📂api
- ┣ 📂dashboard        <-- create this folder
- ┣ 📂fonts
- ┣ 📜index.js
+```text
+📂 pages
+ ┣ 📂 api
+ ┣ 📂 dashboard        <-- create this folder
+ ┣ 📂 fonts
+ ┣ index.js
  ┗ ... etc
 ```
 
@@ -97,13 +97,13 @@ export default function DashboardPreferences() {
 3. When complete, the `pages` folder will have this structure:
 
 ```
-📦pages
- ┣ 📂api
- ┣ 📂dashboard
- ┃ ┣ 📜index.js         <-- added this file
- ┃ ┗ 📜preferences.js   <-- added this file
- ┣ 📂fonts
- ┣ 📜index.js
+📂 pages
+ ┣ 📂 api
+ ┣ 📂 dashboard
+ ┃ ┣ index.js         <-- added this file
+ ┃ ┗ preferences.js   <-- added this file
+ ┣ 📂 fonts
+ ┣ index.js
  ┗ ... etc
 ```
 
@@ -121,14 +121,14 @@ If we have components that are re-used across multiple pages (ie: a common "navb
 1. In the project's `components` folder, add a new file called `layout.js`:
 
 ```
-📦my-app
- ┣ 📂components
- ┃ ┗ 📜layout.js        <-- add this file
+📦 my-app
+ ┣ 📂 components
+ ┃ ┗ layout.js        <-- add this file
  ┣ 📂pages
  ┣ 📂public
  ┣ 📂styles
- ┣ 📜README.md
- ┣ 📜package-lock.json
+ ┣ README.md
+ ┣ package-lock.json
  ┗ ... etc
 ```
 
