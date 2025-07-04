@@ -48,10 +48,7 @@ jobs:
           sudo ./prince-*/install.sh
 
       - name: Build PDF
-        run: npx docusaurus-prince-pdf -u https://patrick-crawford.github.io/WebProgrammingForAppsAndServices/
-
-      - name: rename
-        run: mv ./pdf/patrick-crawford.github.io/WebProgrammingForAppsAndServices.pdf ./pdf/WebProgrammingForAppsAndServices.pdf
+        run: npx docusaurus-prince-pdf -u https://patrick-crawford.github.io/WebProgrammingForAppsAndServices/ -o ./pdf/WebProgrammingForAppsAndServices.pdf
 
       - name: Push pdf
         run: |
