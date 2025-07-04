@@ -43,13 +43,12 @@ jobs:
 
       - name: Install Prince
         run: |
-          curl https://www.princexml.com/download/prince-14.2-linux-generic-x86_64.tar.gz -O
-          tar zxf prince-14.2-linux-generic-x86_64.tar.gz
-          cd prince-14.2-linux-generic-x86_64
-          yes "" | sudo ./install.sh
+          curl -L -o prince.tar.gz https://www.princexml.com/download/prince-15.2-linux-generic-x86_64.tar.gz
+          tar -xzf prince.tar.gz
+          sudo ./prince-*/install.sh
 
       - name: Build PDF
-        run: npx docusaurus-prince-pdf -u patrick-crawford.github.io/WebProgrammingForAppsAndServices/
+        run: npx docusaurus-prince-pdf -u https://patrick-crawford.github.io/WebProgrammingForAppsAndServices/
 
       - name: rename
         run: mv ./pdf/patrick-crawford.github.io/WebProgrammingForAppsAndServices.pdf ./pdf/WebProgrammingForAppsAndServices.pdf
