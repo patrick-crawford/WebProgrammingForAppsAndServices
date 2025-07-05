@@ -68,3 +68,7 @@ table {
 .theme-edit-this-page {
   visibility: hidden;
 }
+
+table td {
+  text-align: left;
+}
