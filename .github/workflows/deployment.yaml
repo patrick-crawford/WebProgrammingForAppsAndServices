@@ -50,10 +50,11 @@ jobs:
       - name: Build PDF
         run: npx docusaurus-prince-pdf -u https://patrick-crawford.github.io/WebProgrammingForAppsAndServices/ -o ./pdf/WebProgrammingForAppsAndServices.pdf
 
-      - name: Push pdf
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add ./pdf
-          git commit -m "add pdf file"
-          git push origin gh-pages
+      - name: Push PDF to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.GH_PAGES_DEPLOY }}
+          publish_dir: ./pdf
+          publish_branch: gh-pages
+          destination_dir: pdf
+          commit_message: 'Add generated PDF'
