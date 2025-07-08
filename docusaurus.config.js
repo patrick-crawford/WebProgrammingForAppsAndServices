@@ -43,7 +43,7 @@ module.exports = {
               html: `<a href='#' id='pwa-button' class='footer__link-item' hidden>Install as an App</a>`,
             },
             {
-              html: `<a href='/pdf/WebProgrammingForAppsAndServices.pdf' id='download-pdf' class='footer__link-item' download='WebProgrammingForAppsAndServices.pdf'>Download Notes (PDF)</a>`,
+              html: `<a href='./pdf/WebProgrammingForAppsAndServices.pdf' id='download-pdf' class='footer__link-item' download='WebProgrammingForAppsAndServices.pdf'>Download Notes (PDF)</a>`,
             },
           ],
         },
