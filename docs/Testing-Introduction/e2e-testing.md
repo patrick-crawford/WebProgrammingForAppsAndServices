@@ -128,7 +128,9 @@ module.exports = defineConfig({
 
 You have probably noticed that the syntax for writing tests looks very similar to what was discussed when we wrote our first tests using "Jest". There exists a "describe" function as well as an "it" function that works the same way as the "test" function in Jest (to identify a test).
 
-> **NOTE:** Recall, you can use the function "it()" in Jest as well, instead of "test()", as "it()" is an alias for "test()" - see: [https://jestjs.io/docs/api#testname-fn-timeout](https://jestjs.io/docs/api#testname-fn-timeout)
+:::info
+Recall, you can use the function "it()" in Jest as well, instead of "test()", as "it()" is an alias for "test()" - see: [https://jestjs.io/docs/api#testname-fn-timeout](https://jestjs.io/docs/api#testname-fn-timeout)
+:::
 
 The common functions and commands that we will be using to write our tests are as follows. For a full list of commands, see "Commands" in the [official Cypress documentation](https://docs.cypress.io/api/table-of-contents):
 

@@ -71,9 +71,11 @@ While Lighthouse is integrated directly into the Chrome DevTools (available in t
 - [As a Node Module](https://github.com/GoogleChrome/lighthouse/blob/HEAD/docs/readme.md#using-programmatically)
 - [Using the online tool: PageSpeed Insights](https://pagespeed.web.dev/)
 
-> **NOTE:** Lighthouse is also available as a [GitHub action](https://github.com/marketplace/actions/lighthouse-ci-action), which allows us to use it in our CI pipeline. Using this, It is possible to set minimum acceptable scores for various performance metrics, which result in errors if not met. This can help to reduce performance-related bugs from being introduced into production.
->
-> See [the documentation for the CI Action](https://github.com/marketplace/actions/lighthouse-ci-action) for more information.
+:::info
+Lighthouse is also available as a [GitHub action](https://github.com/marketplace/actions/lighthouse-ci-action), which allows us to use it in our CI pipeline. Using this, It is possible to set minimum acceptable scores for various performance metrics, which result in errors if not met. This can help to reduce performance-related bugs from being introduced into production.
+
+See [the documentation for the CI Action](https://github.com/marketplace/actions/lighthouse-ci-action) for more information.
+:::
 
 ### Analyzing Page Load
 

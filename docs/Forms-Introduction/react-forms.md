@@ -120,11 +120,14 @@ At first, you will notice one important difference - we did not import, nor use 
 
 You will also notice that our "submitForm" function has changed, as it no longer accepts the submit event "e". With React Hook Form, the submit function is instead invoked by ["handleSubmit"](https://react-hook-form.com/docs/useform/handlesubmit), which automatically passes the form data to the callback function (ie: "submitForm").
 
-> **NOTE:** It is still possible to obtain the submit event, by referencing a 2nd parameter "e", in the "submitForm" function, ie:
->
-> ```js
-> function submitForm(data, e) {}
-> ```
+:::info
+It is still possible to obtain the submit event, by referencing a 2nd parameter "e", in the "submitForm" function, ie:
+
+```js
+function submitForm(data, e) {}
+```
+
+:::
 
 Finally, we made use of the ["register"](https://react-hook-form.com/docs/useform/register) method to associate this control with React Hook Form. By "registering" a control with React Hook Form, we're essentially registering the onBlur and onChange callbacks, as well as setting the name property for the form control and assigning a ["ref"](https://react.dev/learn/manipulating-the-dom-with-refs). From the React Hook Form documentation:
 

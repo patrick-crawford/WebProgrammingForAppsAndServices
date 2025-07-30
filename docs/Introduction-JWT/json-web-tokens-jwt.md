@@ -85,7 +85,9 @@ In our application, we will be using the following methods:
   passport.use(strategy);
   ```
 
-  > **NOTE:** Passport currently supports over 480 different authentication strategies including [Facebook](https://www.passportjs.org/packages/passport-facebook/), [Google](https://www.passportjs.org/packages/passport-google-oauth20/) and [many others](https://www.passportjs.org/packages/)
+  :::info
+  Passport currently supports over 480 different authentication strategies including [Facebook](https://www.passportjs.org/packages/passport-facebook/), [Google](https://www.passportjs.org/packages/passport-google-oauth20/) and [many others](https://www.passportjs.org/packages/)
+  :::
 
 ### passport-jwt
 
@@ -159,7 +161,9 @@ const passportJWT = require('passport-jwt');
 
 With our modules added, we can now add the code to configure the JWT "strategy". Recall, this involves creating a **jwtOptions** object that we can pass to the **jwtStrategy** constructor, along with a callback function that looks at the "jwt_payload" parameter. For our purposes, we can use the code exactly as it has been identified above, placed before our first "app.use()" statement. However, a **new** "secretOrKey" property should be generated (optionally using the ["Generate Password" Tool](https://www.lastpass.com/password-generator) from LastPass).
 
-> **NOTE:** If the "user" has different properties (ie, something _other_ than, "\_id", "userName", "fullName" and "role"), the data passed in the **next()** function should be modified to reflect the correct properties.
+:::caution
+If the "user" has different properties (ie, something _other_ than, "\_id", "userName", "fullName" and "role"), the data passed in the **next()** function should be modified to reflect the correct properties.
+:::
 
 **How to add the strategy**:
 

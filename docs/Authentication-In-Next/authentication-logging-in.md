@@ -27,11 +27,14 @@ Before we can run this app however, we must first:
 
 With the dependencies installed and node_modules rebuilt, we can now start up our app with "npm run dev". You will see that we only have two routes available to the user: “Home” and “Vehicles”. If we try to access the “Vehicles” route, we will not see any data due to a 401 - Unauthorized error returned from our “simple-API-complete” (this can be confirmed in the browser console).
 
-> **NOTE:** This sample app makes use of the UI components from [React Bootstrap](https://react-bootstrap.github.io/). This was accomplished by installing ["react-bootstrap"](https://www.npmjs.com/package/react-bootstrap) and ["bootstrap"](https://www.npmjs.com/package/bootstrap) from NPM and adding the following "import" statement in "\_app.js":
->
-> ```js
-> import 'bootstrap/dist/css/bootstrap.min.css';
-> ```
+:::info
+This sample app makes use of the UI components from [React Bootstrap](https://react-bootstrap.github.io/). This was accomplished by installing ["react-bootstrap"](https://www.npmjs.com/package/react-bootstrap) and ["bootstrap"](https://www.npmjs.com/package/bootstrap) from NPM and adding the following "import" statement in "\_app.js":
+
+```js
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
+
+:::
 
 ## Building an "Authentication" Library
 
@@ -79,13 +82,9 @@ NEXT_PUBLIC_API_URL="http://localhost:8080/api"
 > **NOTE**: [Environment variables](https://nextjs.org/docs/basic-features/environment-variables) in Next.js use the following naming convention:
 >
 > - **.env:** Defines environment variables, to be loaded in code using "process.env" (this is true for all .env files)
->
 > - **.env.local:** Defines "secrets" (tokens, etc) and is meant to be excluded from your code repository (ie: added to .gitignore)
->
 > - **.env.development:** Defines environment variables to be used in the _development_ environment
->
 > - **.env.production:** Defines environment variables to be used in the _production_ environment
->
 > - **.env.test:** Defines environment variables to be used in the _test_ environment
 >
 > Additionally, in order to make your environment variables available in the browser, they must be prefixed with the text **NEXT_PUBLIC\_** as in our example: "NEXT_PUBLIC_API_URL".

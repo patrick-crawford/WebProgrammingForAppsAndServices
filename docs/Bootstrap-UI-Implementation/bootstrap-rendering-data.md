@@ -224,6 +224,15 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 ```
 
+:::info
+When loading an external JavaScript file (only), the ["defer"](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script#defer) attribute may be used on the &lt;script&gt; element to achieve the same result, ie:
+
+```html
+<script src="script.js" defer></script>
+```
+
+:::
+
 #### Generating HTML
 
 Once we are confident that our "populatePostsTable" is functioning as expected, the next step is to take the returned data, ie:
@@ -342,7 +351,9 @@ document.querySelectorAll('#postsTable tbody tr').forEach((row) => {
 
 Our next major task is to give the user the ability to search for a user ID using our search form in the navigation bar. To achieve this, we must first register an event to trigger when the "searchForm" is submitted:
 
-> **NOTE:** Make sure this code is executed only when the "DOM is Ready"
+:::caution
+Make sure this code is executed only when the "DOM is Ready".
+:::
 
 ```js
 document.querySelector('#searchForm').addEventListener('submit', (event) => {

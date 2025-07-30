@@ -19,7 +19,9 @@ Notice how a "source code version control system" was mentioned as a vital part 
 
 If you have ever "pushed" code to [GitHub](https://github.com), you are likely familiar with some of the common "git" commands:
 
-> **NOTE:** If you do not currently have "git" installed on your system (verified using the command: `git --version`), you can install it using the [instructions here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+:::caution
+If you do not currently have "git" installed on your system (verified using the command: `git --version`), you can install it using the [instructions here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+:::
 
 <br />
 
@@ -175,7 +177,9 @@ Finally, commit your changes (if you have not yet done so) and push the code fro
 git push origin master
 ```
 
-> **NOTE:** Your default branch may be "main" - to confirm which branch you are on, execute the command `git status`
+:::caution
+Your default branch may be "main" - to confirm which branch you are on, execute the command `git status`
+:::
 
 You can verify that the code was pushed by going back to your Browser and opening your GitHub repository.
 
@@ -279,9 +283,11 @@ Let's **check in our code** using "git" and once again **"push" it to GitHub**.
 
 Once this has completed, view your repository on [https://github.com](https://github.com) and navigate to the "Actions" tab to see the workflow status. Each workflow run is named after the commit message, in this case "added ci.yaml".
 
-> **NOTE:** You may also click on the workflow run from this screen to see the detailed steps:
+:::info
+You may also click on the workflow run from this screen to see the detailed steps:
 
 ![GitHub Action Success](/img/react-deployment-5.png)
+:::
 
 Next, let's see what happens if we introduce some code that causes ESLint to report an error:
 

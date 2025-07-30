@@ -122,7 +122,7 @@ With our &lt;Hello /&gt; component now displaying correctly within our "Home", l
 
 ### Returning a Single Element
 
-Whenever we use JSX, we must ensure that whatever we return is wrapped in a _single element_. This is because part of the build process for our Next.js apps is [Babel](https://babeljs.io/) compiling the **JSX** code into a **React.createElement(component, props, ...children)** call, ie:
+Whenever we use JSX, we must ensure that whatever we return is wrapped in a _single element_. This is because part of the build process for our Next.js apps involves [Babel](https://babeljs.io/) transforming **JSX** into **function calls** using utilities from react/jsx-runtime. These functions take the component type, props, and children as arguments, ie:
 
 <!-- prettier-ignore-start -->
 ```jsx
@@ -133,10 +133,13 @@ const element = <p className="greeting">Hello, world!</p>
 becomes:
 
 ```js
-const element = React.createElement('p', { className: 'greeting' }, 'Hello, world!');
+import { jsx as _jsx } from 'react/jsx-runtime';
+const element = _jsx('p', { className: 'greeting', children: 'Hello, world!' });
 ```
 
-> **NOTE:** If you _do not_ wish to include a "wrapper" component (ie: a &lt;div&gt;...&lt;/div&gt;, &lt;span&gt;...&lt;/span&gt;, etc) you may instead use a "[JSX Fragment](https://react.dev/reference/react/Fragment)" (ie: &lt;&gt;...&lt;/&gt;), which will not create an extra node in the DOM.
+:::info
+If you _do not_ wish to include a "wrapper" component (ie: a &lt;div&gt;...&lt;/div&gt;, &lt;span&gt;...&lt;/span&gt;, etc) you may instead use a "[JSX Fragment](https://react.dev/reference/react/Fragment)" (ie: &lt;&gt;...&lt;/&gt;), which will not create an extra node in the DOM.
+:::
 
 ### Empty Elements
 
@@ -407,7 +410,9 @@ useEffect(() => {
 }, []);
 ```
 
-> **NOTE:** If the new value of your state variable depends on the previous value, consider using an "updater function". For more information, see: [Updating state based on the previous state](https://react.dev/reference/react/useState#updating-state-based-on-the-previous-state) / [Is using an updater always preferred?](https://react.dev/reference/react/useState#is-using-an-updater-always-preferred)
+:::caution
+If the new value of your state variable depends on the previous value, consider using an "updater function". For more information, see: [Updating state based on the previous state](https://react.dev/reference/react/useState#updating-state-based-on-the-previous-state) / [Is using an updater always preferred?](https://react.dev/reference/react/useState#is-using-an-updater-always-preferred)
+:::
 
 <br />
 

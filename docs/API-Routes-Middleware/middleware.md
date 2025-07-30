@@ -37,7 +37,9 @@ export function middleware(request) {
 }
 ```
 
-> **NOTE:** If the middleware does not modify the response (discussed further down), you do not need to explicitly return or invoke a `.next()` method. Next.js will automatically continue processing the request.
+:::info
+If the middleware does not modify the response (discussed further down), you do not need to explicitly return or invoke a `.next()` method. Next.js will automatically continue processing the request.
+:::
 
 If you test the server now and navigate to the default route "/", you will see that the middleware function has been executed once for every resource sent from our local server (`http://localhost:3000`) for the "/" page:
 
@@ -97,14 +99,16 @@ export const config = {
 };
 ```
 
-> **NOTE:** The matcher config allows full regex so matching like negative lookaheads or character matching is supported. For example: `'/((?!api|_next/static|_next/image|favicon.ico).*)'` will match all request paths except for the ones starting with:
->
-> - api (API routes)
-> - \_next/static (static files)
-> - \_next/image (image optimization files)
-> - favicon.ico (favicon file)
->
-> [Next.js Docs - "matcher config"](https://nextjs.org/docs/pages/building-your-application/routing/middleware#matcher)
+:::info
+The matcher config allows full regex so matching like negative lookaheads or character matching is supported. For example: `'/((?!api|_next/static|_next/image|favicon.ico).*)'` will match all request paths except for the ones starting with:
+
+- api (API routes)
+- \_next/static (static files)
+- \_next/image (image optimization files)
+- favicon.ico (favicon file)
+
+[Next.js Docs - "matcher"](https://nextjs.org/docs/pages/api-reference/file-conventions/middleware#matcher)
+:::
 
 ### Conditionally
 
@@ -126,13 +130,15 @@ export function middleware(request) {
 
 Now that we are able to add middleware functionality to a certain route / set of routes, let's see what kind of practical benefits this provides.
 
-> **NOTE:** When using middleware, we have access to a ["NextResponse"](https://nextjs.org/docs/pages/building-your-application/routing/middleware#nextresponse) object from "next/server" (ie: `import { NextResponse } from 'next/server';`). Using this object, we can perform some useful actions from our middleware, such as:
->
-> - redirect the incoming request to a different URL
-> - rewrite the response by displaying a given URL
-> - Set request headers for API Routes, getServerSideProps, and rewrite destinations
-> - Set response cookies
-> - Set response headers
+:::info
+When using middleware, we have access to a ["NextResponse"](https://nextjs.org/docs/pages/building-your-application/routing/middleware#nextresponse) object from "next/server" (ie: `import { NextResponse } from 'next/server';`). Using this object, we can perform some useful actions from our middleware, such as:
+
+- redirect the incoming request to a different URL
+- rewrite the response by displaying a given URL
+- Set request headers for API Routes, getServerSideProps, and rewrite destinations
+- Set response cookies
+- Set response headers
+  :::
 
 ### Using Cookies
 
@@ -160,11 +166,14 @@ export function middleware(request) {
 }
 ```
 
-> **NOTE:** We can also manually set headers using `response.headers.set()`, ie:
->
-> ```js
-> response.headers.set('x-hello-from-middleware', 'hello');
-> ```
+:::info
+We can also manually set headers using `response.headers.set()`, ie:
+
+```js
+response.headers.set('x-hello-from-middleware', 'hello');
+```
+
+:::
 
 ### URL Rewrites
 

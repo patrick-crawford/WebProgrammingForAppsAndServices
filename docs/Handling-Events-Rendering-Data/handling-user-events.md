@@ -7,7 +7,9 @@ description: Handling User Events
 
 # Handling User Events
 
-> **NOTE:** Some of the below code examples and explanations have been reproduced from sections of the [official online documentation](https://react.dev/) for React.
+:::info
+Some of the below code examples and explanations have been reproduced from sections of the [official online documentation](https://react.dev/) for React.
+:::
 
 Handling events in React is very similar to handling events on DOM elements using properties like [onclick](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick). However, there are some differences, ie:
 
@@ -64,7 +66,9 @@ Here, you will notice that we have added a couple new concepts to the constructi
 
 - On our button element, we use "onClick" (instead of "onclick") to reference the event handler and "wire up" the event.
 
-> **NOTE:** For a full list events please refer to the official documentation for [supported events](https://react.dev/reference/react-dom/components/common).
+:::info
+For a full list events please refer to the official documentation for [supported events](https://react.dev/reference/react-dom/components/common).
+:::
 
 ## Adding Parameters
 

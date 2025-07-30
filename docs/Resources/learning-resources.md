@@ -103,7 +103,9 @@ Was known as "Reactive Extensions"
 Make sure that you're in your project folder.  
 Then type this command: `code .`
 
-> **NOTE:** This assumes that your computer is configured to run this command. See the [Running VS Code on Mac](https://code.visualstudio.com/docs/setup/mac) to configure that feature.
+:::caution
+This assumes that your computer is configured to run this command. See the [Running VS Code on Mac](https://code.visualstudio.com/docs/setup/mac) to configure that feature.
+:::
 
 <br />
 

@@ -96,7 +96,9 @@ Notice how ["useAtom"](https://jotai.org/docs/basics/primitives#use-atom) functi
 
 Now that we understand how state management works in Jotai, let's update our "Component Tree" example from the previous section to use it.
 
-> **NOTE:** we do _not_ need to modify the file "/pages/\_app.js" as in previous examples. Instead we will create a new file: "store.js".
+:::info
+We do _not_ need to modify the file "/pages/\_app.js" as in previous examples. Instead we will create a new file: "store.js".
+:::
 
 **File:** "my-app/store.js"
 

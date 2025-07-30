@@ -79,7 +79,9 @@ If you inspect the image in the browser console, you should see that it now has 
 
   You can see how Next.js has associated each device size with a url based on our original url, ie: the 640 width is set to serve: "/\_next/image?url=%2Ftheatre-bkrd.jpg&**w=640**&q=75", whereas the 750 width is set to serve: "\_next/image?url=%2Ftheatre-bkrd.jpg&**w=750**&q=75". If you try opening each of these images, you will see that Next.js has correctly scaled them to match the widths.
 
-  > **NOTE:** Next.js will only scale images _down_ in size (not up), therefore the image for the 2048 width: "\_next/image?url=%2Ftheatre-bkrd.jpg&**w=2048**&q=75", simply renders our original image (800px x 232px).
+  :::info
+  Next.js will only scale images _down_ in size (not up), therefore the image for the 2048 width: "\_next/image?url=%2Ftheatre-bkrd.jpg&**w=2048**&q=75", simply renders our original image (800px x 232px).
+  :::
 
   You will also notice that the source images have additional query parameter: "q". This represents the "quality" of the image, as Next.js will automatically optimize the original image to provide varying levels of quality. By default the quality setting is set to 75, however it can be changed using the [quality](https://nextjs.org/docs/api-reference/next/image#quality) property.
 
@@ -152,7 +154,9 @@ function filterResults(data, searchText) {
 
 This function only gets invoked once the user starts typing in the "search" field. As such, we can potentially improve our performance by only loading the "lodash" library when it's required (ie: once the user starts typing).
 
-> **NOTE:** Technically, lodash is not required in this case, as the native ["filter()"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) method would also work here. However, this example highlights the syntax for dynamic imports, so we'll keep it in.
+:::info
+Technically, lodash is not required in this case, as the native ["filter()"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) method would also work here. However, this example highlights the syntax for dynamic imports, so we'll keep it in.
+:::
 
 To dynamically import "\_" from lodash we first **remove** it from the top of the file:
 

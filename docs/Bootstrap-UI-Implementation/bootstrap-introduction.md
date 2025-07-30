@@ -73,7 +73,9 @@ Notice how we did not have to specify the number of "columns", each div takes up
 
 Using the above code, you can see that the 2nd column takes up 9 (of 12) columns, while the other column takes the remaining 3.
 
-> **NOTE:** To achieve two equal width columns, two "col-6" classes would work as well.
+:::info
+To achieve two equal width columns, two "col-6" classes would work as well.
+:::
 
 You will also notice at certain points the layout "jumps" and the width of both columns are either _increased_ or _decreased_, while remaining in the center of the container. This is because bootstrap 5 uses [6 Responsive Breakpoints](https://getbootstrap.com/docs/5.1/layout/breakpoints/), essentially representing 6 typical viewport / device sizes. From the documentation, you can see that these breakpoints (the places that the layout "jumps" when resizing) fall at the following viewport widths:
 
@@ -313,7 +315,9 @@ In addition to the standard look above, Bootstrap also offers some customization
 
 One extremely useful _variation_ on the button is the "dropdown" button, effectively creating a button that, when clicked, shows a menu containing more links / buttons. Dropdowns are widely used and allow us to preserve space on the user interface. To create a dropdown button in Bootstrap, the following code can be used:
 
-> **NOTE:** both &lt;button&gt; and &lt;a&gt; can be used in the following example
+:::info
+Both &lt;button&gt; and &lt;a&gt; can be used in the following example
+:::
 
 ```html
 <div class="dropdown">

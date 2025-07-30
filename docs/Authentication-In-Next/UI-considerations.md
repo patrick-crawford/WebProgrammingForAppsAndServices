@@ -84,15 +84,17 @@ To correctly invoke authCheck() we must execute it:
 
 - When a client-side route change has completed: using the 'routeChangeComplete' [router event](https://nextjs.org/docs/api-reference/next/router#routerevents)
 
-  > **NOTE:** [Router Events](https://nextjs.org/docs/api-reference/next/router#routerevents) in Next.js can be "subscribed" to by using the "events.on" properties of the "router" object (obtained from the useRouter() hook), for example:
-  >
-  > ```jsx
-  > router.events.on('routeChangeComplete', (url) => {
-  >   console.log(`route change to ${url} complete!`);
-  > });
-  > ```
-  >
-  > When no longer needed, the event can be "unsubscribed" to by using: `router.evnts.off()`
+  :::info
+  [Router Events](https://nextjs.org/docs/api-reference/next/router#routerevents) in Next.js can be "subscribed" to by using the "events.on" properties of the "router" object (obtained from the useRouter() hook), for example:
+
+  ```jsx
+  router.events.on('routeChangeComplete', (url) => {
+    console.log(`route change to ${url} complete!`);
+  });
+  ```
+
+  When no longer needed, the event can be "unsubscribed" to by using: `router.evnts.off()`
+  :::
 
 To ensure that authCheck() is correctly invoked in both of the above scenarios, we can update our RouteGuard component to use the following code:
 

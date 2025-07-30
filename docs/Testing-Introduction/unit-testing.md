@@ -121,7 +121,9 @@ As stated above, Jest uses matcher functions ("matchers") to define a complete "
 
 The following is a list of the most common matchers from the official [Jest documentation](https://jestjs.io/docs/using-matchers), placed here for **reference**:
 
-> **NOTE:** For the full list, see the [expect API doc](https://jestjs.io/docs/expect).
+:::info
+For the full list, see the [expect API doc](https://jestjs.io/docs/expect).
+:::
 
 #### Truthiness
 
@@ -231,7 +233,9 @@ test('compiling android goes as expected', () => {
 });
 ```
 
-> **NOTE:** the function that throws an exception needs to be invoked within a wrapping function otherwise the `toThrow` assertion will fail.
+:::caution
+The function that throws an exception needs to be invoked within a wrapping function otherwise the `toThrow` assertion will fail.
+:::
 
 ## Testing Components and Pages
 
