@@ -95,11 +95,11 @@ To begin, create a new folder on your machine and open it using Visual Studio Co
 npx create-next-app@15 my-app --use-npm
 ```
 
-You will then be asked to make some decisions regarding what to include in your new app (for now, we will chose the **following values** (ie: the only option that we will say "Yes" to, is the ESLint option):
+You will then be asked to make some decisions regarding what to include in your new app (for now, we will chose the **following values**):
 
 ? Would you like to use TypeScript? … **No** / Yes
 
-? Would you like to use ESLint? … No / **Yes**
+? Which linter would you like to use? › - Use arrow-keys. Return to submit. **ESLint**
 
 ? Would you like to use Tailwind CSS? … **No** / Yes
 
@@ -107,7 +107,7 @@ You will then be asked to make some decisions regarding what to include in your 
 
 ? Would you like to use App Router? (recommended) … **No** / Yes
 
-? Would you like to use Turbopack for `next dev`? … **No** / Yes
+? Would you like to use Turbopack? (recommended) … **No** / Yes
 
 ? Would you like to customize the import alias (`@/*` by default)? … **No** / Yes
 
