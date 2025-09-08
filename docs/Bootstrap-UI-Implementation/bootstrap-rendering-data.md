@@ -214,7 +214,7 @@ function populatePostsTable(userId = null) {
 
 For this function we have included a single parameter "userId", which is set to a default value of _null_. This is because the URL that we fetch our data from will change depending on whether or not we have a numeric "userId" value. Also, we are not yet generating any HTML or updating the DOM - this is purely a test to ensure that the function works as expected.
 
-Next, since we wish the table to show the data once the page is first loaded, we must execute this function when the "DOM is Ready" - if you are familiar with jQuery, this would be the `$(function()&#123; ... })` function. However, since we have removed the dependency on jQuery, we can use the following code instead:
+Next, since we wish the table to show the data once the page is first loaded, we must execute this function when the "DOM is Ready" - if you are familiar with jQuery, this would be the `$(function(){ ... })` function. However, since we have removed the dependency on jQuery, we can use the following code instead:
 
 ```js
 // Execute when the DOM is 'ready'
@@ -291,7 +291,7 @@ To see this strategy in action, let's first try a simple example, where we take 
 ```js
 let numbers = ['one', 'two', 'three'];
 
-let numberList = `<ul>${numbers.map((num) => `<li>${num}/li>`)}</ul>`;
+let numberList = `<ul>${numbers.map((num) => `<li>${num}</li>`)}</ul>`;
 
 console.log(numberList);
 ```
@@ -305,7 +305,7 @@ Ths should show the following in the console:
 This is very close, however you will notice that we have unnecessary commas (",") in our string output. This is because the [map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method always returns an array and when that array is implicitly [converted to a string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString), commas (',') are inserted. To overcome this, we must make one small change to our template literal, ie:
 
 ```js
-let numberList = `<ul>${numbers.map((num) => `<li>${num}/li>`).join('')}</ul>`;
+let numberList = `<ul>${numbers.map((num) => `<li>${num}</li>`).join('')}</ul>`;
 ```
 
 By chaining the [join('')](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) method at end of the "map" operation, we can ensure that the array is joined using empty strings ('') instead of commas (',').

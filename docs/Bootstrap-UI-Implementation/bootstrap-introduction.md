@@ -417,11 +417,11 @@ in order to actually _show_ the modal window, a few different options may be use
 - Using JavaScript, the following function can be used, ie:
 
 ```js
-let myModal = new bootstrap.Modal(document.getElementById('exampleModal'), &#123;
+let myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
   backdrop: 'static', // default true - "static" indicates that clicking on the backdrop will not close the modal window
   keyboard: false, // default true - false indicates that pressing on the "esc" key will not close the modal window
   focus: true, // default true - this instructs the browser to place the modal window in focus when initialized
-&#125;);
+});
 
 myModal.show();
 ```
