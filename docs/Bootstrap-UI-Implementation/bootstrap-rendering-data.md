@@ -299,7 +299,7 @@ console.log(numberList);
 Ths should show the following in the console:
 
 ```
-<ul><li>one/li>,<li>two/li>,<li>three/li></ul>
+<ul><li>one</li>,<li>two/li>,<li>three</li></ul>
 ```
 
 This is very close, however you will notice that we have unnecessary commas (",") in our string output. This is because the [map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method always returns an array and when that array is implicitly [converted to a string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString), commas (',') are inserted. To overcome this, we must make one small change to our template literal, ie:
