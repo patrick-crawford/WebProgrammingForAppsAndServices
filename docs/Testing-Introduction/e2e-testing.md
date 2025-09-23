@@ -307,7 +307,9 @@ it('successfully authenticates a valid github user: test-account and logs out', 
 
 This is very similar to the previous test, however this time we assert that the url includes "/profile-sg" instead of "/login" after the login attempt. Additionally, we get the "Logout" button within the "nav" element and click it. If the user was directed back to "/login" then we know that this flow is functioning correctly .
 
-> **NOTE**: For more examples of how to run tests, including different commands such as working with cookies, files, network requests, the global window object and much more see the [official documentation](https://docs.cypress.io/) as well as the excellent ["Kitchen Sink"](https://example.cypress.io/) example app, provided by Cypress.
+:::info
+For more examples of how to run tests, including different commands such as working with cookies, files, network requests, the global window object and much more see the [official documentation](https://docs.cypress.io/) as well as the excellent ["Kitchen Sink"](https://example.cypress.io/) example app, provided by Cypress.
+:::
 
 ## Running in "Headless" Mode
 

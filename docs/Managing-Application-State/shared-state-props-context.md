@@ -79,7 +79,9 @@ export default function ComponentC(props) {
 ```
 <!-- prettier-ignore-end -->
 
-> **NOTE**: If the new state is computed using the previous state, you can [pass a function to setState](https://react.dev/reference/react/useState#updating-state-based-on-the-previous-state), which receives the previous value.
+:::info
+If the new state is computed using the previous state, you can [pass a function to setState](https://react.dev/reference/react/useState#updating-state-based-on-the-previous-state), which receives the previous value.
+:::
 
 As you can see, "count" and "setCount" can be accessed directly from the "props" object, since it has been passed down from component to component.
 

@@ -79,15 +79,17 @@ Notice the url used in the "fetch" call references "process.env.NEXT_PUBLIC_API_
 NEXT_PUBLIC_API_URL="http://localhost:8080/api"
 ```
 
-> **NOTE**: [Environment variables](https://nextjs.org/docs/basic-features/environment-variables) in Next.js use the following naming convention:
->
-> - **.env:** Defines environment variables, to be loaded in code using "process.env" (this is true for all .env files)
-> - **.env.local:** Defines "secrets" (tokens, etc) and is meant to be excluded from your code repository (ie: added to .gitignore)
-> - **.env.development:** Defines environment variables to be used in the _development_ environment
-> - **.env.production:** Defines environment variables to be used in the _production_ environment
-> - **.env.test:** Defines environment variables to be used in the _test_ environment
->
-> Additionally, in order to make your environment variables available in the browser, they must be prefixed with the text **NEXT_PUBLIC\_** as in our example: "NEXT_PUBLIC_API_URL".
+:::info
+[Environment variables](https://nextjs.org/docs/basic-features/environment-variables) in Next.js use the following naming convention:
+
+- **.env:** Defines environment variables, to be loaded in code using "process.env" (this is true for all .env files)
+- **.env.local:** Defines "secrets" (tokens, etc) and is meant to be excluded from your code repository (ie: added to .gitignore)
+- **.env.development:** Defines environment variables to be used in the _development_ environment
+- **.env.production:** Defines environment variables to be used in the _production_ environment
+- **.env.test:** Defines environment variables to be used in the _test_ environment
+
+Additionally, in order to make your environment variables available in the browser, they must be prefixed with the text **NEXT_PUBLIC\_** as in our example: "NEXT_PUBLIC_API_URL".
+:::
 
 ### Function: setToken()
 

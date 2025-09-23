@@ -118,34 +118,36 @@ Once "hydration" occurs, the effect is executed and the "post" value is set (cau
 ```
 <!-- prettier-ignore-end -->
 
-> **NOTE**: When fetching data on the client-side (as above, in the "useEffect" hook), Next.js recommends that [**SWR**](https://swr.vercel.app/) be used instead, as it handles "caching, revalidation, focus tracking, refetching on intervals, and more".
->
-> Using SWR, the above component would look like:
+:::info
+When fetching data on the client-side (as above, in the "useEffect" hook), Next.js recommends that [**SWR**](https://swr.vercel.app/) be used instead, as it handles "caching, revalidation, focus tracking, refetching on intervals, and more".
+
+Using SWR, the above component would look like:
 
 <!-- prettier-ignore-start -->
->
-> ```jsx
-> import useSWR from 'swr';
->
-> // define the "fetcher" function.  This Can also be defined globally using SWRConfig (https://swr.vercel.app/docs/global-configuration)
-> const fetcher = (url) => fetch(url).then((res) => res.json()); 
->
-> export default function Post() {
->   const { data, error } = useSWR('https://jsonplaceholder.typicode.com/posts/1', fetcher);
->
->   return (
->     <>
->       <strong>User ID:</strong> {data?.userId}<br />
->       <strong>Title:</strong> {data?.title}<br />
->       <strong>Body:</strong> {data?.body}<br />
->     </>
->   );
-> }
-> ```
->
+
+ ```jsx
+ import useSWR from 'swr';
+
+ // define the "fetcher" function.  This Can also be defined globally using SWRConfig (https://swr.vercel.app/docs/global-configuration)
+ const fetcher = (url) => fetch(url).then((res) => res.json()); 
+
+ export default function Post() {
+   const { data, error } = useSWR('https://jsonplaceholder.typicode.com/posts/1', fetcher);
+
+   return (
+     <>
+       <strong>User ID:</strong> {data?.userId}<br />
+       <strong>Title:</strong> {data?.title}<br />
+       <strong>Body:</strong> {data?.body}<br />
+     </>
+   );
+ }
+ ```
+
 <!-- prettier-ignore-end -->
 
-> For more information on using SWR, refer to the [official SWR documentation](https://swr.vercel.app/docs/getting-started).
+For more information on using SWR, refer to the [official SWR documentation](https://swr.vercel.app/docs/getting-started).
+:::
 
 ## Fetching API Data for Pre-Rendered HTML
 
@@ -204,7 +206,9 @@ Here, we have exported an extra function above our "Home" component definition. 
 
 - [**notfound**](https://nextjs.org/docs/api-reference/data-fetching/get-static-props#notfound): "allows the page to return a 404 status and 404 Page. With notFound: true, the page will return a 404 even if there was a successfully generated page before. This is meant to support use cases like user-generated content getting removed by its author."
 
-> **NOTE**: an optional "[revalidate](https://nextjs.org/docs/api-reference/data-fetching/get-static-props#revalidate)" is also available, which allows you to update static pages after you’ve built your site. See: [Incremental Static Regeneration (ISR)](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration) for more information
+:::info
+An optional "[revalidate](https://nextjs.org/docs/api-reference/data-fetching/get-static-props#revalidate)" is also available, which allows you to update static pages after you’ve built your site. See: [Incremental Static Regeneration (ISR)](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration) for more information
+:::
 
 Finally, since this function always returns a promise is often written using the [async / await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) syntax, ie:
 

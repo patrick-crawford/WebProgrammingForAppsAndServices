@@ -224,23 +224,17 @@ It is also important to note that the "Link" component accepts the following pro
 
 - **href** - The path or URL to navigate to. This is the only required prop
 
-- **as** - Optional decorator for the path that will be shown in the browser URL bar.
-
-- **legacyBehavior** - Changes behavior so that child must be &lt;a&gt;. Defaults to false.
-
-  > **NOTE**: This is important to use if [the child is a custom component that wraps the &lt;a&gt; tag](https://nextjs.org/docs/api-reference/next/link#if-the-child-is-a-custom-component-that-wraps-an-a-tag)
-
-- **passHref** - Forces Link to send the href property to its child. Defaults to false
-
-- **prefetch** - Prefetch the page in the background. Defaults to true. Any &lt;Link /&gt; that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.
-
 - **replace** - Replace the current history state instead of adding a new url into the stack. Defaults to false
 
 - **scroll** - Scroll to the top of the page after a navigation. Defaults to true
 
+- **prefetch** - Prefetch the page in the background. Defaults to true. Any &lt;Link /&gt; that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.
+
 - **shallow** - Update the path of the current page without rerunning getStaticProps, getServerSideProps or getInitialProps. Defaults to false
 
 - **locale** - The active locale is automatically prepended. locale allows for providing a different locale. When false href has to include the locale as the default behavior is disabled.
+
+- **onNavigate** - An event handler called during client-side navigation. The handler receives an event object that includes a preventDefault() method, allowing you to cancel the navigation if needed.
 
 ### useRouter Hook
 

@@ -213,7 +213,9 @@ In the above file, we have two properties:
 
 While this is enough to register the action for our repository on GitHub, it will not run as we have not defined any "jobs". As our first job, let's run a simple "lint" check using ESLint.
 
-> **NOTE**: Since version 11.0.0, Next.js provides an integrated [ESLint](https://eslint.org/) experience out of the box (which we opted into when creating a new app). By executing the command "npm run lint" you can "lint" your code, which "statically analyzes your code to quickly find problems". This is an important step in CI, as we do not want any JS errors potentially breaking our build further down in the pipeline.
+:::info
+Since version 11.0.0, Next.js provides an integrated [ESLint](https://eslint.org/) experience out of the box (which we opted into when creating a new app). By executing the command "npm run lint" you can "lint" your code, which "statically analyzes your code to quickly find problems". This is an important step in CI, as we do not want any JS errors potentially breaking our build further down in the pipeline.
+:::
 
 Add the following code to update the "ci.yaml" file:
 
@@ -246,7 +248,9 @@ We have added quite a lot to the file, so let's discuss the purpose of each prop
 
 - **steps:** A job contains a sequence of tasks called steps. Steps can run commands, run setup tasks, or run an action in your repository, a public repository, or an action published in a Docker registry. Not all steps run actions, but all actions run as a step.
 
-  > **NOTE** the following properties are prefixed with a "-" character, to indicate that they are part of a [Block Sequence](https://yaml.org/spec/1.2.2/#block-sequences)
+  :::info
+  the following properties are prefixed with a "-" character, to indicate that they are part of a [Block Sequence](https://yaml.org/spec/1.2.2/#block-sequences)
+  :::
 
 - **- name:** Checkout code, **uses:** actions/checkout@v4: This defines the first step of our job, named "Checkout code". It uses the ["Checkout V4" Action](https://github.com/actions/checkout), which: "checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it."
 
@@ -414,7 +418,9 @@ After you have pushed your branch to GitHub using the above code, open your brow
 
 You will notice that GitHub has detected a recent push to the branch fix/logo and is suggesting that you make a "pull request"
 
-> **NOTE**: Pull requests let you tell others about changes you've pushed to a branch in a repository on GitHub. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch. For more information, see the [GitHub Documentation on Pull Requests](https://docs.github.com/en/pull-requests)
+:::info
+Pull requests let you tell others about changes you've pushed to a branch in a repository on GitHub. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch. For more information, see the [GitHub Documentation on Pull Requests](https://docs.github.com/en/pull-requests)
+:::
 
 Click this button to open a "pull request". At the next page, use the default values and create the request by pressing the "Create pull request" button.
 

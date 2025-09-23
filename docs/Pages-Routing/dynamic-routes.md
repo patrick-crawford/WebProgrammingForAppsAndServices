@@ -65,7 +65,9 @@ export default function Products() {
 
 Once again we have made use of the "query" property of router to obtain an object containing properties that match each query parameter. However, since these are technically optional parameters (it is possible to navigate to the route without them), we should check to make sure they exist before we render any data related to them.
 
-> **NOTE**: if there are duplicate values for a query parameter, ie: "category=stationary&category=office", then the "category" property will contain an array containing the values: `["stationary", "office"]`
+:::info
+If there are duplicate values for a query parameter, ie: "category=stationary&category=office", then the "category" property will contain an array containing the values: `["stationary", "office"]`
+:::
 
 ## Dynamic Routes with 'getStaticProps'
 

@@ -103,20 +103,23 @@ export default function UserForm() {
 
 At first, you will notice one important difference - we did not import, nor use the "useState" hook at all in our solution. This is because React Hook Form manages its own internal state and if we wish to set an initial value for a form field, it can be done using either the "defaultValue" property on a specific form element, or by using the "defaultValues" property in the argument passed to the ["useForm"](https://react-hook-form.com/docs/useform) hook (as above).
 
-> **NOTE**: While React Hook Form encourages the use of default values, it is also very likely that any initial form data will not be available until it has been obtained from a Web API. In this case it would be common practice to update the form from within the "useEffect()" hook, once the data has materialized. If this is the case, ["setValue"](https://react-hook-form.com/docs/useform/setvalue) may be used with a default value of "" for userName:
->
-> ```jsx
-> const { register, handleSubmit, setValue } = useForm({
->   defaultValues: {
->     userName: '', // the documentation encourages default values
->   },
-> });
->
-> useEffect(() => {
->   // set the userName value
->   setValue('userName', 'Homer Simpson');
-> }, []);
-> ```
+:::info
+While React Hook Form encourages the use of default values, it is also very likely that any initial form data will not be available until it has been obtained from a Web API. In this case it would be common practice to update the form from within the "useEffect()" hook, once the data has materialized. If this is the case, ["setValue"](https://react-hook-form.com/docs/useform/setvalue) may be used with a default value of "" for userName:
+
+```jsx
+const { register, handleSubmit, setValue } = useForm({
+  defaultValues: {
+    userName: '', // the documentation encourages default values
+  },
+});
+
+useEffect(() => {
+  // set the userName value
+  setValue('userName', 'Homer Simpson');
+}, []);
+```
+
+:::
 
 You will also notice that our "submitForm" function has changed, as it no longer accepts the submit event "e". With React Hook Form, the submit function is instead invoked by ["handleSubmit"](https://react-hook-form.com/docs/useform/handlesubmit), which automatically passes the form data to the callback function (ie: "submitForm").
 
@@ -131,19 +134,19 @@ function submitForm(data, e) {}
 
 Finally, we made use of the ["register"](https://react-hook-form.com/docs/useform/register) method to associate this control with React Hook Form. By "registering" a control with React Hook Form, we're essentially registering the onBlur and onChange callbacks, as well as setting the name property for the form control and assigning a ["ref"](https://react.dev/learn/manipulating-the-dom-with-refs). From the React Hook Form documentation:
 
-> ```jsx
-> const { onChange, onBlur, name, ref } = register('firstName');
->
-> <input
->  onChange={onChange} // assign onChange event
->  onBlur={onBlur} // assign onBlur event
->  name={name} // assign name prop
->  ref={ref} // assign ref prop
-> />
->
-> // same as above
-> <input {...register('firstName')} />
-> ```
+```jsx
+const { onChange, onBlur, name, ref } = register('firstName');
+
+<input
+ onChange={onChange} // assign onChange event
+ onBlur={onBlur} // assign onBlur event
+ name={name} // assign name prop
+ ref={ref} // assign ref prop
+/>
+
+// same as above
+<input {...register('firstName')} />
+```
 
 ### Registering Multiple Form Controls
 

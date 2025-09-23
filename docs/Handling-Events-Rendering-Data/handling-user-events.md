@@ -46,19 +46,21 @@ export default function ClickCounter(props) {
 ```
 <!-- prettier-ignore-end -->
 
-> **NOTE**: Be careful when updating state based on a previous value (ie: numClicks + 1 in the example above), as it may not always work as expected on types that are not [primitive](https://developer.mozilla.org/en-US/docs/Glossary/Primitive), ie: "string", "number", "boolean", etc. For example, if we use the same logic to add an element to a state value holding an _array_, we may be tempted to use the following code:
->
-> ```js
-> setMyArray(myArray.push('new element'));
-> ```
->
-> However, updating state in this manner **will not** cause the component to re-render. Instead, we must provide a **new array**, ie:
->
-> ```js
-> setMyArray([...myArray, 'new element']);
-> ```
->
-> For more information see: [Updating arrays in state](https://react.dev/learn/adding-interactivity#updating-arrays-in-state) and [Updating objects in state](https://react.dev/learn/adding-interactivity#updating-objects-in-state)
+:::caution
+Be careful when updating state based on a previous value (ie: numClicks + 1 in the example above), as it may not always work as expected on types that are not [primitive](https://developer.mozilla.org/en-US/docs/Glossary/Primitive), ie: "string", "number", "boolean", etc. For example, if we use the same logic to add an element to a state value holding an _array_, we may be tempted to use the following code:
+
+```js
+setMyArray(myArray.push('new element'));
+```
+
+However, updating state in this manner **will not** cause the component to re-render. Instead, we must provide a **new array**, ie:
+
+```js
+setMyArray([...myArray, 'new element']);
+```
+
+For more information see: [Updating arrays in state](https://react.dev/learn/adding-interactivity#updating-arrays-in-state) and [Updating objects in state](https://react.dev/learn/adding-interactivity#updating-objects-in-state)
+:::
 
 Here, you will notice that we have added a couple new concepts to the construction and rendering of a typical functional component, ie:
 

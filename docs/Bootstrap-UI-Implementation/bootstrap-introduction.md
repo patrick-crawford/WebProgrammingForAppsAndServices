@@ -11,7 +11,9 @@ You have likely worked with Bootstrap before, either in previous courses or for 
 
 Here, we will be discussing [Bootstrap 5.1](https://getbootstrap.com/docs/5.1/) - this is important because Bootstrap 5 is the first version to [drop support for Internet Explorer](https://getbootstrap.com/docs/5.1/getting-started/browsers-devices/#internet-explorer) as well as no longer require [jQuery](https://jquery.com/) as a dependency.
 
-> **NOTE**: The full [Bootstrap 5.1 Documentation](https://getbootstrap.com/docs/5.1/) provides a ton of great resources expanding on what is discussed below. The following documentation describes enough of the core components to get started and build a simple user interface only. Please refer back to the original documentation for examples and guides on how to use the **_many_** other great UI components provided by Bootstrap 5.1 not mentioned here.
+:::info
+The full [Bootstrap 5.1 Documentation](https://getbootstrap.com/docs/5.1/) provides a ton of great resources expanding on what is discussed below. The following documentation describes enough of the core components to get started and build a simple user interface only. Please refer back to the original documentation for examples and guides on how to use the **_many_** other great UI components provided by Bootstrap 5.1 not mentioned here.
+:::
 
 ## Including Bootstrap 5
 

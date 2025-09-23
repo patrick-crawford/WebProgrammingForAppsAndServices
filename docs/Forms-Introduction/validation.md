@@ -135,7 +135,9 @@ TypeError: Cannot read properties of undefined (reading 'type')
 
 Also, if you try running the example again, you should see that the error messages show up only after the form is first submitted. After this first submit, the errors are shown / hidden as the user modifies the form. This lets the user know immediately if they have corrected the error.
 
-> **NOTE**: In addition to the "errors" object, you can include additional objects such as _"dirtyFields"_ and _"touchedFields"_ to monitor which fields have been modified and visited.
+:::info
+In addition to the "errors" object, you can include additional objects such as _"dirtyFields"_ and _"touchedFields"_ to monitor which fields have been modified and visited.
+:::
 
 ### Highlighting Fields
 

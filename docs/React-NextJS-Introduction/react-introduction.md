@@ -180,4 +180,6 @@ At first, we will not be touching many of these files and will be **adding** mor
 
   - "Home.module.css": referenced in the "index.js" file, used by the "Home" component.
 
-    > **NOTE**: The ".module.css" extension identifies the file as a "[CSS Module](https://github.com/css-modules/css-modules)" which will "locally scope CSS by automatically creating a unique class name. This allows you to use the same CSS class name in different files without worrying about collisions."
+    :::info
+    The ".module.css" extension identifies the file as a "[CSS Module](https://github.com/css-modules/css-modules)" which will "locally scope CSS by automatically creating a unique class name. This allows you to use the same CSS class name in different files without worrying about collisions."
+    :::

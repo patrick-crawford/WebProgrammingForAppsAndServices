@@ -262,13 +262,16 @@ will allow us to provide "fName" and "lName" values to the component using the s
 <Hello fName="Jason" lName="Perez" />
 ```
 
-> **NOTE**: If we wish to have _default_ values for props (in this case: **fName** and **lName**), we can update the function definition to use object destructuring with [default values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#default_value):
+:::info
+If we wish to have _default_ values for props (in this case: **fName** and **lName**), we can update the function definition to use object destructuring with [default values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#default_value):
 
 ```jsx
 export default function Hello({ fName = 'First Name', lName = 'Last Name' }) {
   // NOTE: props will be accessed using fName and lName instead of props.fName and props.lName
 }
 ```
+
+:::
 
 ## Introducing "Hooks".
 

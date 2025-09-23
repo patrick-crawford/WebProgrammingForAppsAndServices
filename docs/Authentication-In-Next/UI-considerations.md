@@ -209,22 +209,25 @@ Finally, with our token in place and our logout function implemented, we can mak
 <!-- prettier-ignore-start -->
 ```jsx
 return (
-  <Navbar bg="light" expand="lg">
-    <Container>
-      <Link href="/" passHref legacyBehavior><Navbar.Brand >Vehicles UI {token && <>- Welcome {token.userName}</>}</Navbar.Brand></Link>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
-          <Link href="/" passHref legacyBehavior ><Nav.Link>Home</Nav.Link></Link>
-          {token && <Link href="/vehicles" passHref legacyBehavior><Nav.Link>Vehicles</Nav.Link></Link>}
-        </Nav>
-        <Nav className="ml-auto">
-          {!token && <Link href="/login" passHref legacyBehavior><Nav.Link>Login</Nav.Link></Link>}
-          {token && <Nav.Link onClick={logout}>Logout</Nav.Link>}
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
+import Link from "next/link";
+import { Navbar, Nav, Container } from "react-bootstrap";
+
+<Navbar bg="light" expand="lg">
+  <Container>
+    <Navbar.Brand as={Link} href="/">Vehicles UI {token && <>- Welcome {token.userName}</>}</Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="me-auto">
+        <Nav.Link as={Link} href="/">Home</Nav.Link>
+        {token && <Nav.Link as={Link} href="/vehicles">Vehicles</Nav.Link>}
+      </Nav>
+      <Nav className="ml-auto">
+        {!token && <Nav.Link as={Link} href="/login">Login</Nav.Link>}
+        {token && <Nav.Link onClick={logout}>Logout</Nav.Link>}
+      </Nav>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
 );
 ```
 <!-- prettier-ignore-end -->
