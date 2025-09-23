@@ -70,7 +70,7 @@ which avoids the content mis-match when the component is rendered after "hydrati
 
 ## Fetching API Data after Hydration
 
-Now that we are familiar with the concepts of "pre-rendering" and "hydration", it follows that a request for API data that must occur _after_ hydration should be done within the "useEffect" hook as well. For example, consider the following "Post" component which fetches data from our familiar [&#123;JSON&125; Placeholder](https://jsonplaceholder.typicode.com/) dataset:
+Now that we are familiar with the concepts of "pre-rendering" and "hydration", it follows that a request for API data that must occur _after_ hydration should be done within the "useEffect" hook as well. For example, consider the following "Post" component which fetches data from our familiar [&#123;JSON&#125; Placeholder](https://jsonplaceholder.typicode.com/) dataset:
 
 <!-- prettier-ignore-start -->
 ```jsx
