@@ -52,7 +52,7 @@ There are several required online resources:
 - [Bootstrap (version 3) CSS documentation](https://getbootstrap.com/docs/3.4/css/)  
   Links to other topics (e.g. Getting started, etc.) are on that page
 
-- Official [Next.js Documentation](https://nextjs.org/docs/getting-starteds)
+- Official [Next.js Documentation](https://nextjs.org/docs/pages/getting-started/installation)
 
 - Node Reference
 

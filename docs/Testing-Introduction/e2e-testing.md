@@ -7,7 +7,7 @@ description: E2E (End to End) Testing
 
 # E2E (End to End) Testing
 
-When it comes to E2E or "End to End" testing, the first testing tool recommended in the [Next.js documentation](https://nextjs.org/docs/testing) is ["Cypress"](https://docs.cypress.io/), a "next generation front end testing tool built for the modern web. [It addresses] the key pain points developers and QA engineers face when testing modern applications."
+When it comes to E2E or "End to End" testing, the first testing tool recommended in the [Next.js documentation](https://nextjs.org/docs/pages/guides/testing) is ["Cypress"](https://docs.cypress.io/), a "next generation front end testing tool built for the modern web. [It addresses] the key pain points developers and QA engineers face when testing modern applications."
 
 > E2E Testing is a technique that tests your app from the web browser through to the back end of your application, as well as testing integrations with third-party APIs and services. These types of tests are great at making sure your entire app is functioning as a cohesive whole.
 >

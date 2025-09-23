@@ -22,7 +22,7 @@ can be used to create a "product" page that accepts an "id" route parameter.
 
 ## Reading Route Parameters
 
-In order to actually read and display a route parameter (product "id" in the above case), the ["router"](https://nextjs.org/docs/api-reference/next/router#router-object) object once must again be obtained using the ["useRouter"](https://nextjs.org/docs/api-reference/next/router#userouter) hook from "next/router":
+In order to actually read and display a route parameter (product "id" in the above case), the ["router"](https://nextjs.org/docs/pages/api-reference/functions/use-router#router-object) object once must again be obtained using the ["useRouter"](https://nextjs.org/docs/pages/api-reference/functions/use-router#userouter) hook from "next/router":
 
 **File:** "pages/product/[id].js"
 
@@ -71,7 +71,7 @@ If there are duplicate values for a query parameter, ie: "category=stationary&ca
 
 ## Dynamic Routes with 'getStaticProps'
 
-If you wish to use 'getStaticProps' with dynamic routes, things become slightly more complicated. In a route that always fetches data from the same API endpoint, having the data available for pre-rendering is straightforward since the "fetch" statement always pulls data from the same location. However, if the route is dynamic, it becomes more difficult to pull the data ahead of time using 'getStaticProps'. To solve this problem, Next.js has an asynchronous ["getStaticPaths"](https://nextjs.org/docs/basic-features/data-fetching/get-static-paths) function that must be used in _addition_ to "getStaticProps". To see how this works, consider the following example:
+If you wish to use 'getStaticProps' with dynamic routes, things become slightly more complicated. In a route that always fetches data from the same API endpoint, having the data available for pre-rendering is straightforward since the "fetch" statement always pulls data from the same location. However, if the route is dynamic, it becomes more difficult to pull the data ahead of time using 'getStaticProps'. To solve this problem, Next.js has an asynchronous ["getStaticPaths"](https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-paths) function that must be used in _addition_ to "getStaticProps". To see how this works, consider the following example:
 
 **File:** "pages/post/[id].js"
 
@@ -111,9 +111,9 @@ export default function Post(props) {
 
 Here, we have a component "Post" that is located within the "pages" directory at "pages/post/[id].js". We also have "getStaticProps" as we have seen it before, except in this case it accepts a "context" parameter that provides the function with one of the id's in the list of paths returned from the "getStaticPaths" function (ie: context.params.id).
 
-All of the supported route parameters are included in the "paths" property of the return value for the "getStaticPaths" function - if the user tries to access a route containing a parameter that is not listed in "paths", a 404 error will be returned. This is because an additional "fallback" property has explicitly been set to false. If this functionality is not desired, then fallback can be set to true (see: [the official documentation for "fallback: true"](https://nextjs.org/docs/api-reference/data-fetching/get-static-paths#fallback-true) for more information).
+All of the supported route parameters are included in the "paths" property of the return value for the "getStaticPaths" function - if the user tries to access a route containing a parameter that is not listed in "paths", a 404 error will be returned. This is because an additional "fallback" property has explicitly been set to false. If this functionality is not desired, then fallback can be set to true (see: [the official documentation for "fallback: true"](https://nextjs.org/docs/pages/api-reference/functions/get-static-paths#fallback-true) for more information).
 
-Finally, you will notice that in our "Post" component, we do not have to explicitly read the route parameter using the ["useRouter"](https://nextjs.org/docs/api-reference/next/router#userouter) hook (as above). The "post" property in "props" will automatically contain the data for the correct "id" parameter.
+Finally, you will notice that in our "Post" component, we do not have to explicitly read the route parameter using the ["useRouter"](https://nextjs.org/docs/pages/api-reference/functions/use-router#userouter) hook (as above). The "post" property in "props" will automatically contain the data for the correct "id" parameter.
 
 ## Custom Error Pages
 

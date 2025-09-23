@@ -28,7 +28,7 @@ Now, say there's a button on "ComponentC" that increments a counter value by 1. 
 
 To solve this, we do not declare the "count" state in "ComponentC" with the button, but instead declare it in a _top level_ component.
 
-You will recall from the discussion on "Layouts & Pages" that Next.js actually has a [high-level component](https://nextjs.org/docs/advanced-features/custom-app) declared in "pages/\_app.js" - this is where we placed our &lt;layout&gt;...&lt;/layout&gt; component so that it will be available on all pages. This is also where we will declare our counter state and pass it to page components via props, ie:
+You will recall from the discussion on "Layouts & Pages" that Next.js actually has a [high-level component](https://nextjs.org/docs/pages/building-your-application/routing/custom-app) declared in "pages/\_app.js" - this is where we placed our &lt;layout&gt;...&lt;/layout&gt; component so that it will be available on all pages. This is also where we will declare our counter state and pass it to page components via props, ie:
 
 **File:** "/pages/\_app.js"
 

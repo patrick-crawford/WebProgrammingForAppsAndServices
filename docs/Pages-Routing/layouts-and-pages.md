@@ -186,9 +186,7 @@ export default function App({ Component, pageProps }) {
 4. Navigate to the website. You will see a common navigation bar with links to all our newly created routes.
 
 :::info
-
-It is also possible to configure layouts on a page-by-page basis. See the [official documentation](https://nextjs.org/docs/basic-features/layouts#per-page-layouts) for more information.
-
+It is also possible to configure layouts on a page-by-page basis. See the [official documentation](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts#per-page-layouts) for more information.
 :::
 
 ## Client-Side Page Transitions
@@ -197,7 +195,7 @@ When browsing the site, you may have noticed that each route takes a moment to l
 
 ### Link Component
 
-Client-side routing can be achieved by replacing anchor tags (&lt;a&gt;...&lt;/a&gt;) with custom ["Link" Components](https://nextjs.org/docs/api-reference/next/link) (&lt;Link&gt;...&lt;/Link&gt;) containing the "href" attribute. Let's test this by refactoring our Layout to use "Link":
+Client-side routing can be achieved by replacing anchor tags (&lt;a&gt;...&lt;/a&gt;) with custom ["Link" Components](https://nextjs.org/docs/pages/api-reference/components/link) (&lt;Link&gt;...&lt;/Link&gt;) containing the "href" attribute. Let's test this by refactoring our Layout to use "Link":
 
 <!-- prettier-ignore-start -->
 ```jsx title="components/layout.js"
@@ -220,7 +218,7 @@ export default function Layout(props) {
 
 You will find that the page transitions are much faster and that only the relevant .js is loaded when each route is first accessed. Once that route is accessed for a second time, nothing is download from the server - loading the required .js files on demand is known as ["Lazy Loading"](https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading).
 
-It is also important to note that the "Link" component accepts the following props (from the [official documentation](https://nextjs.org/docs/api-reference/next/link)):
+It is also important to note that the "Link" component accepts the following props (from the [official documentation](https://nextjs.org/docs/pages/api-reference/components/link)):
 
 - **href** - The path or URL to navigate to. This is the only required prop
 
@@ -238,25 +236,25 @@ It is also important to note that the "Link" component accepts the following pro
 
 ### useRouter Hook
 
-If we wish to achieve the same effect from within our component logic (such as in an "onClick" event handler), we must make use of the ["useRouter"](https://nextjs.org/docs/api-reference/next/router#userouter) hook from "next/router":
+If we wish to achieve the same effect from within our component logic (such as in an "onClick" event handler), we must make use of the ["useRouter"](https://nextjs.org/docs/pages/api-reference/functions/use-router#userouter) hook from "next/router":
 
 ```jsx
 import { useRouter } from 'next/router';
 ```
 
-This hook will be used to obtain a ["router"](https://nextjs.org/docs/api-reference/next/router#router-object) object from within our component by invoking "useRouter()":
+This hook will be used to obtain a ["router"](https://nextjs.org/docs/pages/api-reference/functions/use-router#router-object) object from within our component by invoking "useRouter()":
 
 ```jsx
 const router = useRouter();
 ```
 
-The [router object](https://nextjs.org/docs/api-reference/next/router#router-object) itself has _many useful properties_, such as:
+The [router object](https://nextjs.org/docs/pages/api-reference/functions/use-router#router-object) itself has _many useful properties_, such as:
 
 - **pathname:** The current route - the path of the page in /pages.
 
 - **query:** The query string parsed to an object, including dynamic route parameters. It will be an empty object during prerendering if the page doesn't have data fetching requirements. Defaults to {}
 
-However, at the moment we are most interested in the ["push"](https://nextjs.org/docs/api-reference/next/router#routerpush) method to transition to a new route:
+However, at the moment we are most interested in the ["push"](https://nextjs.org/docs/pages/api-reference/functions/use-router#routerpush) method to transition to a new route:
 
 ```jsx
 router.push('/'); // navigate to the home route "/"

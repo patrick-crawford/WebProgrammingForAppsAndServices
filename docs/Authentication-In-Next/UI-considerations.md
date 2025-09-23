@@ -82,10 +82,10 @@ To correctly invoke authCheck() we must execute it:
 
 - When the component is first mounted: using the useEffect() hook
 
-- When a client-side route change has completed: using the 'routeChangeComplete' [router event](https://nextjs.org/docs/api-reference/next/router#routerevents)
+- When a client-side route change has completed: using the 'routeChangeComplete' [router event](https://nextjs.org/docs/pages/api-reference/functions/use-router#routerevents)
 
   :::info
-  [Router Events](https://nextjs.org/docs/api-reference/next/router#routerevents) in Next.js can be "subscribed" to by using the "events.on" properties of the "router" object (obtained from the useRouter() hook), for example:
+  [Router Events](https://nextjs.org/docs/pages/api-reference/functions/use-router#routerevents) in Next.js can be "subscribed" to by using the "events.on" properties of the "router" object (obtained from the useRouter() hook), for example:
 
   ```jsx
   router.events.on('routeChangeComplete', (url) => {

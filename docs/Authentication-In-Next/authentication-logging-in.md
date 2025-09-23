@@ -9,7 +9,7 @@ description: Authentication (Logging In)
 
 Authentication can be a very complex topic, especially when working with Next.js. This is largely due to the amount of freedom and options that Next.js makes available to developers.
 
-For example, some pages may be pre-rendered using [Server Side Rendering (SSR)](https://nextjs.org/docs/basic-features/pages#server-side-rendering) while others may be rendered on the client side (CSR). Even [Incremental Static Regeneration](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration) is possible, allowing static pages to be created / updated _after_ the site is built. Not to mention the ability for developers to write their own [API's within Next.js](https://nextjs.org/docs/api-routes/introduction), as well utilize the (now stable) [Middleware](https://nextjs.org/docs/advanced-features/middleware) functionality to execute code before a request is completed.
+For example, some pages may be pre-rendered using [Server Side Rendering (SSR)](https://nextjs.org/docs/pages/building-your-application/rendering/server-side-rendering) while others may be rendered on the client side [(CSR)](https://nextjs.org/docs/pages/building-your-application/rendering/client-side-rendering). Even [Incremental Static Regeneration](https://nextjs.org/docs/pages/guides/incremental-static-regeneration) is possible, allowing static pages to be created / updated _after_ the site is built. Not to mention the ability for developers to write their own [API's within Next.js](https://nextjs.org/docs/pages/building-your-application/routing/api-routes), as well utilize the (now stable) [Middleware](https://nextjs.org/docs/pages/api-reference/file-conventions/middleware) functionality to execute code before a request is completed.
 
 For our examples however, we will try to keep things as straightforward as possible, primarily using code that we have seen already.
 
@@ -80,7 +80,7 @@ NEXT_PUBLIC_API_URL="http://localhost:8080/api"
 ```
 
 :::info
-[Environment variables](https://nextjs.org/docs/basic-features/environment-variables) in Next.js use the following naming convention:
+[Environment variables](https://nextjs.org/docs/pages/guides/environment-variables) in Next.js use the following naming convention:
 
 - **.env:** Defines environment variables, to be loaded in code using "process.env" (this is true for all .env files)
 - **.env.local:** Defines "secrets" (tokens, etc) and is meant to be excluded from your code repository (ie: added to .gitignore)

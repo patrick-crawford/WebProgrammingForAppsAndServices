@@ -15,7 +15,7 @@ Fortunately, Next.js has a few techniques that we can use to improve these numbe
 
 ### Using the &lt;Image /&gt; Component
 
-The custom [Image component](https://nextjs.org/docs/api-reference/next/image) included with Next.js is an alternative to the native &lt;img /&gt; element and offers a number of optimizations, including:
+The custom [Image component](https://nextjs.org/docs/pages/api-reference/components/image) included with Next.js is an alternative to the native &lt;img /&gt; element and offers a number of optimizations, including:
 
 - **Improved Performance**: Always serve correctly sized image for each device, using modern image formats
 - **Visual Stability**: Prevent Cumulative Layout Shift automatically
@@ -52,7 +52,7 @@ sizes="100vw"
 ```
 <!-- prettier-ignore-end -->
 
-- This property provides information on how wide the image should be at different breakpoints, for more information on the "sizes" property, see: ["sizes" in the Image documentation](https://nextjs.org/docs/api-reference/next/image#sizes)
+- This property provides information on how wide the image should be at different breakpoints, for more information on the "sizes" property, see: ["sizes" in the Image documentation](https://nextjs.org/docs/pages/api-reference/components/image#sizes)
 
 <!-- prettier-ignore-start -->
 ```js
@@ -69,13 +69,13 @@ priority
 ```
 <!-- prettier-ignore-end -->
 
-- When set, [**priority**](https://nextjs.org/docs/api-reference/next/image#priority) will mark the image as "priority" causing it to [preload](https://web.dev/preload-responsive-images/). Using "priority" in this case was recommended as this image was detected as the "Largest Contentful Paint (LCP)" element, as seen in the browser console:
+- When set, [**priority**](https://nextjs.org/docs/pages/api-reference/components/image#priority) will mark the image as "priority" causing it to [preload](https://web.dev/preload-responsive-images/). Using "priority" in this case was recommended as this image was detected as the "Largest Contentful Paint (LCP)" element, as seen in the browser console:
 
   > "Image with src "/theatre-bkrd.jpg" was detected as the Largest Contentful Paint (LCP). Please add the "priority" property if this image is above the fold"
 
 If you inspect the image in the browser console, you should see that it now has a number of extra properties, including
 
-- **srcset:** This is the "source set", which identifies different urls for images to be served at different viewport widths (breakpoints). By default the following [device sizes](https://nextjs.org/docs/api-reference/next/image#devicesizes) are used: 640, 750, 828, 1080, 1200, 1920, 2048, 3840.
+- **srcset:** This is the "source set", which identifies different urls for images to be served at different viewport widths (breakpoints). By default the following [device sizes](https://nextjs.org/docs/pages/api-reference/components/image#devicesizes) are used: 640, 750, 828, 1080, 1200, 1920, 2048, 3840.
 
   You can see how Next.js has associated each device size with a url based on our original url, ie: the 640 width is set to serve: "/\_next/image?url=%2Ftheatre-bkrd.jpg&**w=640**&q=75", whereas the 750 width is set to serve: "\_next/image?url=%2Ftheatre-bkrd.jpg&**w=750**&q=75". If you try opening each of these images, you will see that Next.js has correctly scaled them to match the widths.
 
@@ -83,7 +83,7 @@ If you inspect the image in the browser console, you should see that it now has 
   Next.js will only scale images _down_ in size (not up), therefore the image for the 2048 width: "\_next/image?url=%2Ftheatre-bkrd.jpg&**w=2048**&q=75", simply renders our original image (800px x 232px).
   :::
 
-  You will also notice that the source images have additional query parameter: "q". This represents the "quality" of the image, as Next.js will automatically optimize the original image to provide varying levels of quality. By default the quality setting is set to 75, however it can be changed using the [quality](https://nextjs.org/docs/api-reference/next/image#quality) property.
+  You will also notice that the source images have additional query parameter: "q". This represents the "quality" of the image, as Next.js will automatically optimize the original image to provide varying levels of quality. By default the quality setting is set to 75, however it can be changed using the [quality](https://nextjs.org/docs/pages/api-reference/components/image#quality) property.
 
 - **decoding:** Next.js sets the [decoding](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/decoding) value to "async", which is done to "reduce delay in presenting other content".
 
@@ -109,7 +109,7 @@ See more info: https://nextjs.org/docs/messages/next-image-unconfigured-host
 
 If we navigate to the link in ["more info"](https://nextjs.org/docs/messages/next-image-unconfigured-host), we will see that the error occurred because the "src" value uses a hostname in the URL that isn't defined in the images.remotePatterns in next.config.mjs. This is done to ensure that only images from approved domains are able to use the Next.js image optimization API.
 
-To solve this problem, open the "next.config.mjs" file, and update the **nextConfig** object to include an "images" property with "[remotePatterns](https://nextjs.org/docs/app/api-reference/components/image#remotepatterns)":
+To solve this problem, open the "next.config.mjs" file, and update the **nextConfig** object to include an "images" property with "[remotePatterns](https://nextjs.org/docs/pages/api-reference/components/image#remotepatterns)":
 
 **File:** "next.config.mjs"
 
@@ -134,7 +134,7 @@ export default nextConfig;
 
 ### Dynamically Importing Libraries
 
-Next.js supports ["Lazy Loading"](https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading) for external libraries with "import" as well as [images](https://nextjs.org/docs/api-reference/next/image#loading). In larger apps, this can have an impact on metrics such as Largest Contentful Paint (LCP) and First Input Delay (FID) due to the smaller bundle size that is required on the first page load.
+Next.js supports ["Lazy Loading"](https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading) for external libraries with "import" as well as [images](https://nextjs.org/docs/pages/api-reference/components/image#loading). In larger apps, this can have an impact on metrics such as Largest Contentful Paint (LCP) and First Input Delay (FID) due to the smaller bundle size that is required on the first page load.
 
 You will notice that our example includes the library ["lodash"](https://lodash.com) near the top of the index.js file as:
 
@@ -201,7 +201,7 @@ If we wish to dynamically load the "StarRating" component, we must update our co
 import dynamic from 'next/dynamic';
 ```
 
-3. Import the "StarRating" component using the "dynamic" function (included above), making sure to set the [loading property](https://nextjs.org/docs/advanced-features/dynamic-import#example):
+3. Import the "StarRating" component using the "dynamic" function (included above), making sure to set the [loading property](https://nextjs.org/docs/pages/guides/lazy-loading#nextdynamic):
 
 ```js
 const StarRating = dynamic(() => import('@/components/StarRating'), {
@@ -261,7 +261,7 @@ If at all possible, we would ideally like to **pre-render** as much of the page 
 // const fetcher = (url) => fetch(url).then((res) => res.json());
 ```
 
-3. Import the same "getMovieData()" function that your API uses to fetch the movie data. This will be used by "getStaticProps", since this function is also [executed on the server](https://nextjs.org/docs/basic-features/data-fetching/get-static-props#when-does-getstaticprops-run).
+3. Import the same "getMovieData()" function that your API uses to fetch the movie data. This will be used by "getStaticProps", since this function is also [executed on the server](https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props#when-does-getstaticprops-run).
 
 ```js
 import getMovieData from '@/lib/movieData';

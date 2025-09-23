@@ -51,7 +51,7 @@ Similarly, some "helper functions" have been made available on the **"res"** obj
 
 - **res.redirect([status,] path)** - Redirects to a specified path or URL. status must be a valid HTTP status code. If not specified, status defaults to "307" "Temporary redirect".
 
-- **res.revalidate(urlPath)** - [Revalidate a page on demand](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration#on-demand-revalidation-beta) using getStaticProps. urlPath must be a string.
+- **res.revalidate(urlPath)** - [Revalidate a page on demand](https://nextjs.org/docs/pages/basic-features/data-fetching/incremental-static-regeneration#on-demand-revalidation-beta) using getStaticProps. urlPath must be a string.
 
 ### HTTP Methods
 

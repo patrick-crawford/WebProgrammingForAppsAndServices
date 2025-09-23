@@ -153,7 +153,7 @@ For more information on using SWR, refer to the [official SWR documentation](htt
 
 If the data that is coming back from the API is not likely to change, we may wish to include it in the pre-rendered HTML to speed up load times and provide greater SEO.
 
-Next.js provides this functionality via a mechanism called [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching/get-static-props). This is essentially a function that Next.js runs on the server when the app is built in order to obtain data required to pre-render your pages. From our point of view, it is a function that we can export from any "page" component to provide data to any components on that page via "props".
+Next.js provides this functionality via a mechanism called [getStaticProps](https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props). This is essentially a function that Next.js runs on the server when the app is built in order to obtain data required to pre-render your pages. From our point of view, it is a function that we can export from any "page" component to provide data to any components on that page via "props".
 
 > **Warning:** This will _not work_ with custom components defined within the "components" folder.
 
@@ -200,14 +200,14 @@ export default function Home(props) {
 
 Here, we have exported an extra function above our "Home" component definition. The purpose of this function is to provide the exported page component (ie: **"Home"**, in this case) with additional props that contain data to be pre-rendered by the component and/or the child components. The function always returns a promise which resolves with an object that contains one of the following properties:
 
-- [**props**](https://nextjs.org/docs/api-reference/data-fetching/get-static-props#props): "a key-value pair, where each value is received by the page component. It should be a serializable object so that any props passed, could be serialized with JSON.stringify."
+- [**props**](https://nextjs.org/docs/pages/api-reference/functions/get-static-props#props): "a key-value pair, where each value is received by the page component. It should be a serializable object so that any props passed, could be serialized with JSON.stringify."
 
-- [**redirect**](https://nextjs.org/docs/api-reference/data-fetching/get-static-props#redirect): "The redirect object allows redirecting to internal or external resources. It should match the shape of `{ destination: string, permanent: boolean }.`
+- [**redirect**](https://nextjs.org/docs/pages/api-reference/functions/get-static-props#redirect): "The redirect object allows redirecting to internal or external resources. It should match the shape of `{ destination: string, permanent: boolean }.`
 
-- [**notfound**](https://nextjs.org/docs/api-reference/data-fetching/get-static-props#notfound): "allows the page to return a 404 status and 404 Page. With notFound: true, the page will return a 404 even if there was a successfully generated page before. This is meant to support use cases like user-generated content getting removed by its author."
+- [**notfound**](https://nextjs.org/docs/pages/api-reference/functions/get-static-props#notfound): "allows the page to return a 404 status and 404 Page. With notFound: true, the page will return a 404 even if there was a successfully generated page before. This is meant to support use cases like user-generated content getting removed by its author."
 
 :::info
-An optional "[revalidate](https://nextjs.org/docs/api-reference/data-fetching/get-static-props#revalidate)" is also available, which allows you to update static pages after you’ve built your site. See: [Incremental Static Regeneration (ISR)](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration) for more information
+An optional "[revalidate](https://nextjs.org/docs/pages/api-reference/functions/get-static-props#revalidate)" is also available, which allows you to update static pages after you’ve built your site. See: [Incremental Static Regeneration (ISR)](https://nextjs.org/docs/pages/guides/incremental-static-regeneration) for more information
 :::
 
 Finally, since this function always returns a promise is often written using the [async / await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) syntax, ie:

@@ -144,7 +144,7 @@ When using middleware, we have access to a ["NextResponse"](https://nextjs.org/d
 
 As we know, a "cookie" is a small chunk of data that is sent by a server and stored in the client's web browser using the header ["Set-Cookie"](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie). Similarly, the data is automatically sent from the client back to the server, using the ["Cookie"](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cookie) header, often used to manage session information. In Next.js we can implement this functionality in our middleware functions by using the "cookies" property on both the request ("NextRequest") and response ("NextResponse") objects.
 
-In the below example, we have two routes: "/setCookie" (which is expecting a query parameter: "message") and "/getCookie". When the middleware matches the "/setCookie" route, it reads the query parameter "message" and adds it to the "Set-Cookie" response header. If the middleware matches the "/getCookie" route, it simply outputs the "message" cookie value to the console. It uses the ["next()"](https://nextjs.org/docs/app/api-reference/functions/next-response#next) function to continue routing:
+In the below example, we have two routes: "/setCookie" (which is expecting a query parameter: "message") and "/getCookie". When the middleware matches the "/setCookie" route, it reads the query parameter "message" and adds it to the "Set-Cookie" response header. If the middleware matches the "/getCookie" route, it simply outputs the "message" cookie value to the console. It uses the ["next()"](https://nextjs.org/docs/pages/api-reference/functions/next-response#next) function to continue routing:
 
 ```js
 import { NextResponse } from 'next/server';
