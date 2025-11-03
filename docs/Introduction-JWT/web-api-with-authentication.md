@@ -109,7 +109,7 @@ For our project, we will use the ["bcryptjs"](https://www.npmjs.com/package/bcry
 In your project, use **npm** to install **bcryptjs**:
 
 ```text title="Terminal"
-npm install bcrypt
+npm install bcryptjs
 ```
 
 At the top of `user-service.js`, "require" the bcrypt module:
