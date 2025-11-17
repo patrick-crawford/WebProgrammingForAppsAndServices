@@ -21,7 +21,7 @@ When unit testing our Next.js code we will be using the popular ["Jest"](https:/
 
 ### Getting Started
 
-Before we begin learning Jest, we should create a new Next.js app using the familiar command (ensuring that we use version 14):
+Before we begin learning Jest, we should create a new Next.js app using the familiar command:
 
 ```
 npx create-next-app@15 my-app --use-npm
@@ -30,10 +30,35 @@ npx create-next-app@15 my-app --use-npm
 Once this is complete, we will install Jest as a ["development dependency"](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#devdependencies) using npm, ie:
 
 ```
-npm install --save-dev jest
+npm install --save-dev jest jest-environment-jsdom
 ```
 
-Next, we should update the "scripts" section of our **package.json** file to create a new "test" script that runs Jest using the ["--watchAll"](https://jestjs.io/docs/cli#--watchall) flag (to run all tests):
+Before we can begin writing tests however, we must create a **jest.config.mjs** file in "my-app" to configure the testing environment, ie:
+
+**File:** "my-app/jest.config.mjs"
+
+```js
+import nextJest from 'next/jest.js';
+
+const createJestConfig = nextJest({
+  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+  dir: './',
+});
+
+// Add any custom config to be passed to Jest
+/** @type {import('jest').Config} */
+const config = {
+  // Add more setup options before each test is run
+  // setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+
+  testEnvironment: 'jest-environment-jsdom',
+};
+
+// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
+export default createJestConfig(config);
+```
+
+Finally, we should update the "scripts" section of our **package.json** file to create a new "test" script that runs Jest using the ["--watchAll"](https://jestjs.io/docs/cli#--watchall) flag (to run all tests):
 
 ```js
 "scripts": {
@@ -44,7 +69,7 @@ Next, we should update the "scripts" section of our **package.json** file to cre
 }
 ```
 
-Finally, create a new folder under "my-app" called "tests" (ie: my-app/tests) and add a new file within this folder called **"practice.test.js"**. This is where we will be practicing writing our first tests using Jest.
+Once the configuration is complete, create a new folder under "my-app" called "tests" (ie: my-app/tests) and add a new file within this folder called **"practice.test.js"**. This is where we will be practicing writing our first tests using Jest.
 
 ### Writing Tests using Jest
 
@@ -239,39 +264,12 @@ The function that throws an exception needs to be invoked within a wrapping func
 
 ## Testing Components and Pages
 
-If we want to use these testing techniques to test more than functions, arrays, strings, etc. within our Next.js app, we will need to install a few additional dependencies, ie:
-
-- **jest-environment-jsdom:** - Used to define our "Test Environment" (Note: This was removed from Jest as of [version 28](https://jestjs.io/blog/2022/04/25/jest-28), however it is still actively maintained)
+If we want to use these testing techniques to test more than functions, arrays, strings, etc. within our Next.js app, we will need to install an additional dependency, ie:
 
 - [**@testing-library/react:**](https://testing-library.com/docs/react-testing-library/intro/) - A "very light-weight solution for testing React components. It provides light utility functions on top of react-dom and react-dom/test-utils, in a way that encourages better testing practices."
 
 ```
-npm install --save-dev jest-environment-jsdom @testing-library/react
-```
-
-Before we can begin writing tests, we must create a **jest.config.mjs** file in "my-app" to configure the testing environment, ie:
-
-**File:** "my-app/jest.config.mjs"
-
-```js
-import nextJest from 'next/jest.js';
-
-const createJestConfig = nextJest({
-  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
-  dir: './',
-});
-
-// Add any custom config to be passed to Jest
-/** @type {import('jest').Config} */
-const config = {
-  // Add more setup options before each test is run
-  // setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-
-  testEnvironment: 'jest-environment-jsdom',
-};
-
-// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
-export default createJestConfig(config);
+npm install --save-dev @testing-library/react
 ```
 
 This should complete the testing set up - now we can begin writing tests for components and pages. For now, we will start with a simple test that will examine the output of the default "index" page, included when an app is created using "create-next-app":
