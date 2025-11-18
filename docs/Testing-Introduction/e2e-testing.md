@@ -285,7 +285,7 @@ In an effort to further verify the login functionality of our app, we should als
 Essentially, we must verify the following flow:
 
 1. Navigate (visit) the route "/login"
-2. Type in an unknown GitHub User (ie: "test-account" into the "userName" input element)
+2. Type in a known GitHub User (ie: "test-account" into the "userName" input element)
 3. Hit the "enter" key to submit the form
 4. User should be directed to /profile-sg
 5. Click the "Logout" button
