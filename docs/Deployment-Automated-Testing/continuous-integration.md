@@ -93,7 +93,7 @@ git branch
 [git merge](https://git-scm.com/docs/git-merge): Merges lines of development together. This command is typically used to combine changes made on two distinct branches. For example, a developer would merge when they want to combine changes from a feature branch into the main branch for deployment.
 
 ```console
-git checkout master
+git checkout main
 git merge new-feature
 ```
 
@@ -102,7 +102,7 @@ git merge new-feature
 [git pull](https://git-scm.com/docs/git-pull): Updates the local line of development with updates from its remote counterpart. Developers use this command if a teammate has made commits to a branch on a remote, and they would like to reflect those changes in their local environment.
 
 ```console
-git pull origin master
+git pull origin main
 ```
 
 <br />
@@ -110,7 +110,7 @@ git pull origin master
 [git push](https://git-scm.com/docs/git-push): Updates the remote repository with any commits made locally to a branch.
 
 ```console
-git push origin master
+git push origin main
 ```
 
 <br />
@@ -174,7 +174,7 @@ origin	git@github.com:patrick-crawford/my-app.git (push)
 Finally, commit your changes (if you have not yet done so) and push the code from your local repository to the remote one:
 
 ```
-git push origin master
+git push origin main
 ```
 
 :::caution
@@ -364,7 +364,7 @@ Once you have added the above code to your ".github/workflows/ci.yaml" file, che
 
 Since part of "Continuous Integration" is integrating code changes and merging them into a central repository, we must discuss what this looks like in GitHub and how our Action (workflow) can help ensure code correctness for our main / master branch.
 
-First, let's work on a bug identified by the client; in this case, they have noted that there must be a ":" character after the text "By" before the "Vercel" logo. In addition to fixing this issue, let's break one of our tests to see how we may be alerted of the potential danger of merging this bug fix into the master branch:
+First, let's work on a bug identified by the client; in this case, they have noted that there must be a ":" character after the text "By" before the "Vercel" logo. In addition to fixing this issue, let's break one of our tests to see how we may be alerted of the potential danger of merging this bug fix into the main branch:
 
 To begin, issue the following command to checkout a new "branch" for the fix
 
@@ -383,23 +383,22 @@ Now that we know we are working on the "fix/logo" branch and not the "master" br
 **File:** "pages/index.js"
 
 ```jsx
-<div>
-  <a
-    href="https://abc.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    By:{' '}
-    <Image
-      src="/vercel.svg"
-      alt="Vercel Logo"
-      className={styles.vercelLogo}
-      width={100}
-      height={24}
-      priority
-    />
-  </a>
-</div>
+<a
+  className={styles.primary}
+  href="https://abc.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  By: {' '}
+  <Image
+    className={styles.logo}
+    src="/vercel.svg"
+    alt="Vercel logomark"
+    width={20}
+    height={20}
+  />
+  Deploy now
+</a>
 ```
 
 Notice how we have added the required ":" character in the appropriate place in the UI to fix the bug. However, we have also introduced a potential problem by changing the "vercel.com" link to "abc.com", thus breaking our "Jest" unit test and making this bug fix unfit for merging with the "master" branch.
@@ -445,6 +444,6 @@ This will trigger the tests to once again run and update the pull request, indic
 Go ahead and merge the request to update your "master" branch on GitHub with the bug fix. If you wish to update your local "master" branch with the fix, you can issue the commands:
 
 ```console
-git checkout master
-git pull origin master
+git checkout main
+git pull origin main
 ```

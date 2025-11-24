@@ -106,9 +106,9 @@ As before, since we pushed a separate branch to our repository, GitHub gives an 
 
 If the "Preview" is approved, then we can proceed to merge the pull request. This will trigger a rebuild with Vercel and our production site will be updated to match the Preview.
 
-As before, if you wish to update your local "master" branch with the fix, you can issue the commands:
+As before, if you wish to update your local "main" branch with the fix, you can issue the commands:
 
 ```console
-git checkout master
-git pull origin master
+git checkout main
+git pull origin main
 ```
