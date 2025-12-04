@@ -245,9 +245,9 @@ Once again, you can confirm that this is working if you open the "network" tab i
 
 Additionally, you should temporarily see the text **"Loading..."** in place of the star rating the first time this component is loaded.
 
-### Refactoring to use SSR
+### Refactoring to use SSG
 
-If at all possible, we would ideally like to **pre-render** as much of the page as we can. This can help reduce the time to first render and improve application performance. The home page for our practice "app" is a good candidate for SSR, since this is simply a static list of movies that isn't likely to change frequently. We have seen how this works when [discussing Handling Events &amp; Rendering Data](/Handling-Events-Rendering-Data/adding-API-data#fetching-api-data-for-pre-rendered-html), so let's take what we have learned there and apply it to our Film Collection app as a final optimization before going to production:
+If at all possible, we would ideally like to **pre-render** as much of the page as we can. This can help reduce the time to first render and improve application performance. The home page for our practice "app" is a good candidate for SSG, since this is simply a static list of movies that isn't likely to change frequently. We have seen how this works when [discussing Handling Events &amp; Rendering Data](/Handling-Events-Rendering-Data/adding-API-data#fetching-api-data-for-pre-rendered-html), so let's take what we have learned there and apply it to our Film Collection app as a final optimization before going to production:
 
 1. Remove the import for useSWR as we will no longer need it:
 
