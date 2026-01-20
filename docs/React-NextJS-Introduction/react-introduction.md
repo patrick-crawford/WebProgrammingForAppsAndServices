@@ -31,7 +31,7 @@ In 2011 Facebook employee Jordan Walke created an early prototype of React calle
 
 > **Quick Note**: ["Web Components"](https://developer.mozilla.org/en-US/docs/Web/Web_Components) are now standardized and [available in modern browsers](https://developer.mozilla.org/en-US/docs/Web/Web_Components#browser_compatibility). Please refer to the [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/Web_Components) for more information.
 
-In 2013, React was released as open source and has steadily grown in use among developers, even surpassing popular frameworks like Angular and Vue in metrics such as [Questions per Month on Stack Overflow](https://insights.stackoverflow.com/trends?tags=reactjs%2Cvue.js%2Cangular%2Cangularjs) and [Most commonly used Web Framework](https://insights.stackoverflow.com/survey/2021#section-most-popular-technologies-web-frameworks) in the 2021 Stack Overflow Survey of over 67,000 professional developers.
+In 2013, React was released as open source and has steadily grown in use among developers, even surpassing popular frameworks like Angular and Vue in metrics such as [Questions per Month on Stack Overflow](https://insights.stackoverflow.com/trends?tags=reactjs%2Cvue.js%2Cangular%2Cangularjs) and [Most commonly used Web Technology](https://survey.stackoverflow.co/2024/technology#1-web-frameworks-and-technologies) in the 2024 Stack Overflow Survey of over 65,000 professional developers.
 
 ## Getting Started
 
