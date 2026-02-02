@@ -25,8 +25,6 @@ Here's how to add the /about route:
 ```text title="Pages folder structure"
 📂 pages
  ┣ 📂api
- ┣ 📂dashboard
- ┣ 📂fonts
  ┃ _app.js
  ┣ _document.js
  ┣ about.js      <-- added this file
@@ -68,8 +66,7 @@ Let's expand our current list of routes to add two "dashboard" routes:
 📂 pages
 ┣ 📂 api
 ┣ 📂 dashboard <-- create this folder
-┣ 📂 fonts
-┣ index.js
+┣ _app.js
 ┗ ... etc
 
 ```
@@ -85,8 +82,7 @@ Let's expand our current list of routes to add two "dashboard" routes:
  ┣ 📂 dashboard
  ┃ ┣ index.js         <-- add this file
  ┃ ┗ preferences.js   <-- add this file
- ┣ 📂 fonts
- ┣ index.js
+ ┣ _app.js
  ┗ ... etc
 ```
 
