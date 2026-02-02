@@ -226,7 +226,7 @@ It is also important to note that the "Link" component accepts the following pro
 
 - **scroll** - Scroll to the top of the page after a navigation. Defaults to true
 
-- **prefetch** - Prefetch the page in the background. Defaults to true. Any &lt;Link /&gt; that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.
+- **prefetch** - Prefetch the page in the background. Defaults to true. Any &lt;Link /&gt; that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing `prefetch={false}`. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.
 
 - **shallow** - Update the path of the current page without rerunning getStaticProps, getServerSideProps or getInitialProps. Defaults to false
 
@@ -252,7 +252,7 @@ The [router object](https://nextjs.org/docs/pages/api-reference/functions/use-ro
 
 - **pathname:** The current route - the path of the page in /pages.
 
-- **query:** The query string parsed to an object, including dynamic route parameters. It will be an empty object during prerendering if the page doesn't have data fetching requirements. Defaults to {}
+- **query:** The query string parsed to an object, including dynamic route parameters. It will be an empty object during prerendering if the page doesn't have data fetching requirements. Defaults to `{}`
 
 However, at the moment we are most interested in the ["push"](https://nextjs.org/docs/pages/api-reference/functions/use-router#routerpush) method to transition to a new route:
 

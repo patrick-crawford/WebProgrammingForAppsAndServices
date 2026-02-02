@@ -35,9 +35,9 @@ You will see that both ["req"](https://nodejs.org/api/http.html#class-httpincomi
 
 Additionally, "middleware" functions have been built in to parse the incoming request, which gives the **"req"** object the following _additional_ properties:
 
-- **req.cookies** - An object containing the cookies sent by the request. Defaults to {}
+- **req.cookies** - An object containing the cookies sent by the request. Defaults to `{}`
 
-- **req.query** - An object containing the query string. Defaults to {}" - Note: route parameter values also included.
+- **req.query** - An object containing the query string. Defaults to `{}` - Note: route parameter values also included.
 
 - **req.body** - An object containing the body parsed by content-type, or null if no body was sent
 
@@ -51,7 +51,7 @@ Similarly, some "helper functions" have been made available on the **"res"** obj
 
 - **res.redirect([status,] path)** - Redirects to a specified path or URL. status must be a valid HTTP status code. If not specified, status defaults to "307" "Temporary redirect".
 
-- **res.revalidate(urlPath)** - [Revalidate a page on demand](https://nextjs.org/docs/pages/basic-features/data-fetching/incremental-static-regeneration#on-demand-revalidation-beta) using getStaticProps. urlPath must be a string.
+- **res.revalidate(urlPath)** - [Revalidate a page on demand](https://nextjs.org/docs/pages/guides/incremental-static-regeneration#on-demand-revalidation-with-revalidatepath) using getStaticProps. urlPath must be a string.
 
 ### HTTP Methods
 
