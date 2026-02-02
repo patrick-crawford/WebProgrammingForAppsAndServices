@@ -129,9 +129,9 @@ If we have components that are re-used across multiple pages (ie: a common "navb
 📦 my-app
  ┣ 📂 components
  ┃ ┗ layout.js        <-- add this file
- ┣ 📂pages
- ┣ 📂public
- ┣ 📂styles
+ ┣ 📂 pages
+ ┣ 📂 public
+ ┣ 📂 styles
  ┣ README.md
  ┣ package-lock.json
  ┗ ... etc
