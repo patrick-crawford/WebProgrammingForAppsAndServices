@@ -24,7 +24,7 @@ Here's how to add the /about route:
 
 ```text title="Pages folder structure"
 📂 pages
- ┣ 📂api
+ ┣ 📂 api
  ┃ _app.js
  ┣ _document.js
  ┣ about.js      <-- added this file
