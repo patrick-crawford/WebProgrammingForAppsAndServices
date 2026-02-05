@@ -17,11 +17,11 @@ Essentially, middleware allows us to execute functions in the ‘middle’ of a 
 
 Next.js has a similar concept:
 
-> [In Next.js] middleware allows you to run code on the server before a request is completed. Then, based on the incoming request, you can modify the response by rewriting, redirecting, modifying the request or response headers, or responding directly.
+> [In Next.js] middleware (renamed to "proxy" in Next.js version 16) allows you to run code on the server before a request is completed. Then, based on the incoming request, you can modify the response by rewriting, redirecting, modifying the request or response headers, or responding directly.
 >
 > Middleware executes before routes are rendered. It's particularly useful for implementing custom server-side logic like authentication, logging, or handling redirects.
 >
-> [https://nextjs.org/docs/pages/api-reference/file-conventions/middleware](https://nextjs.org/docs/pages/api-reference/file-conventions/middleware)
+> [https://nextjs.org/docs/pages/api-reference/file-conventions/proxy](https://nextjs.org/docs/pages/api-reference/file-conventions/proxy)
 
 Here, we have a function that is automatically executed as part of the request / response cycle in Next.js. It can be configured to apply logic to a specific route, or conditionally with multiple routes.
 
