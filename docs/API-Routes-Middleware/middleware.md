@@ -107,7 +107,7 @@ The matcher config allows full regex so matching like negative lookaheads or cha
 - \_next/image (image optimization files)
 - favicon.ico (favicon file)
 
-[Next.js Docs - "matcher"](https://nextjs.org/docs/pages/api-reference/file-conventions/middleware#matcher)
+[Next.js Docs - "matcher"](https://nextjs.org/docs/pages/api-reference/file-conventions/proxy#matcher)
 :::
 
 ### Conditionally
