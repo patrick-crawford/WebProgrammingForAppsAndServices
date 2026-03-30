@@ -204,7 +204,7 @@ name: CI
 on: [push]
 ```
 
-Notice how we have named the file "ci.yaml", ie: "ci" for "continuous integration" and the ".yaml" extension for a ["yaml"](https://yaml.org/) file: "a human-friendly data serialization language for all programming languages". You can think of it as an alternative to .json that is typically used for writing configuration files. The official documentation offers a ["Reference Card"](https://yaml.org/refcard.html) as a reference for the full syntax, however we will only be using a small subset of this - just enough to correctly configure our "ci" workflow. One of the major differences that you will notice right away is that that it uses whitespace instead of curly braces.
+Notice how we have named the file "ci.yaml", ie: "ci" for "continuous integration" and the ".yaml" extension for a ["yaml"](https://yaml.org/) file: "a human-friendly data serialization language for all programming languages". You can think of it as an alternative to .json that is typically used for writing configuration files. The [(1.2.2) specification](https://yaml.org/spec/1.2.2/) outlines the full syntax, however we will only be using a small subset of this - just enough to correctly configure our "ci" workflow. One of the major differences that you will notice right away is that that it uses whitespace instead of curly braces.
 
 In the above file, we have two properties:
 
@@ -389,14 +389,8 @@ Now that we know we are working on the "fix/logo" branch and not the "master" br
   target="_blank"
   rel="noopener noreferrer"
 >
-  By: {' '}
-  <Image
-    className={styles.logo}
-    src="/vercel.svg"
-    alt="Vercel logomark"
-    width={20}
-    height={20}
-  />
+  By:{' '}
+  <Image className={styles.logo} src="/vercel.svg" alt="Vercel logomark" width={20} height={20} />
   Deploy now
 </a>
 ```
