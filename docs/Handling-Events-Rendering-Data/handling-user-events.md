@@ -47,17 +47,25 @@ export default function ClickCounter(props) {
 <!-- prettier-ignore-end -->
 
 :::caution
-Be careful when updating state based on a previous value (ie: numClicks + 1 in the example above), as it may not always work as expected on types that are not [primitive](https://developer.mozilla.org/en-US/docs/Glossary/Primitive), ie: "string", "number", "boolean", etc. For example, if we use the same logic to add an element to a state value holding an _array_, we may be tempted to use the following code:
+Be careful when updating state based on a previous value (ie: numClicks + 1 in the example above), as it may not always work as expected, since the values in state are "immutable". If we use the same logic to add an element to a state value holding an _array_, we may be tempted to use the following code:
 
 ```js
 setMyArray(myArray.push('new element'));
 ```
 
-However, updating state in this manner **will not** cause the component to re-render. Instead, we must provide a **new array**, ie:
+However, this will simply return the [number of elements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) in the array after the push and **will not** update the value in the state. Instead, we must provide a **new array**, ie:
 
 ```js
 setMyArray([...myArray, 'new element']);
 ```
+
+You may also consider using the following syntax:
+
+```js
+setMyArray(currentArray => [...currentArray, 'new element']);
+```
+
+The updater-function is generally preferable when the new state depends on the previous state. It ensures that React uses the most recent state value, which is especially important when multiple state updates are queued or batched together.
 
 For more information see: [Updating arrays in state](https://react.dev/learn/adding-interactivity#updating-arrays-in-state) and [Updating objects in state](https://react.dev/learn/adding-interactivity#updating-objects-in-state)
 :::
