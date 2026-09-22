@@ -47,7 +47,7 @@ export default function ClickCounter(props) {
 <!-- prettier-ignore-end -->
 
 :::caution
-Be careful when updating state based on a previous value (ie: numClicks + 1 in the example above), as it may not always work as expected, since the values in state are "immutable". If we use the same logic to add an element to a state value holding an _array_, we may be tempted to use the following code:
+Be careful when updating arrays or objects stored in state, as React state should be treated as immutable. For example, if we use the same logic to add an element to a state value holding an _array_, we may be tempted to use the following code:
 
 ```js
 setMyArray(myArray.push('new element'));
