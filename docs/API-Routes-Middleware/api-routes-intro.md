@@ -31,7 +31,7 @@ export default function handler(req, res) {
 
 ### 'req' and 'res'
 
-You will see that both ["req"](https://nodejs.org/api/http.html#class-httpincomingmessage) and ["res"](https://nodejs.org/api/http.html#class-httpserverresponse) objects are available to the exported callback function in order to give us access to the HTTP request / response. However, it is important to note that these are **not** the same as the ["Request"](https://expressjs.com/en/api.html#req) and ["Response"](https://expressjs.com/en/api.html#res) objects provided by ["Express"](https://expressjs.com/en/guide/routing.html), though they serve the same purpose.
+You will see that both ["req"](https://nodejs.org/api/http.html#class-httpincomingmessage) and ["res"](https://nodejs.org/api/http.html#class-httpserverresponse) objects are available to the exported callback function in order to give us access to the HTTP request / response. However, it is important to note that these are **not** the same as the ["Request"](https://expressjs.com/en/api/request) and ["Response"](https://expressjs.com/en/api/response) objects provided by ["Express"](https://expressjs.com/en/guide/routing.html), though they serve the same purpose.
 
 Additionally, "middleware" functions have been built in to parse the incoming request, which gives the **"req"** object the following _additional_ properties:
 

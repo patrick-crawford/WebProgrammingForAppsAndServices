@@ -207,7 +207,7 @@ Not much has changed here. Instead of simply comparing userData.password with us
 
 Now that we have a working "user" service that will handle registering and validating user information, we will add new API routes (/api/) for authentication to our server application.
 
-Since our new routes will be accepting input (via JSON, posted to the route), we will need to configure our server to correctly parse "JSON" formatted data. This can be accomplished by adding [express.json()](https://expressjs.com/en/api.html) built-in middleware before our route definitions:
+Since our new routes will be accepting input (via JSON, posted to the route), we will need to configure our server to correctly parse "JSON" formatted data. This can be accomplished by adding [express.json()](https://expressjs.com/en/api/express/#expressjson) built-in middleware before our route definitions:
 
 ```javascript title="server.js"
 app.use(express.json());

@@ -59,7 +59,7 @@ There are several required online resources:
   - [Node.js Documentation](https://nodejs.org/en/docs/)
   - (Suggested) [nodejitsu](https://docs.nodejitsu.com/)
 
-- [Express.js Documentation](https://expressjs.com/en/4x/api.html)
+- [Express.js Documentation](https://expressjs.com/en/api/)
 
 - [TypesScript Reference](https://www.typescriptlang.org/docs/home.html)
 
